@@ -1,0 +1,15 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="EmployerServicePortal.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="EmployerServicePortal_Employer_Employer" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://10.234.148.145/Wealthbox/SIPML/Employer.asmx</Value>
+    </Setting>
+    <Setting Name="EmployerServicePortal_Util_Util" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://10.234.148.145/Wealthbox/SIPML/Util.asmx</Value>
+    </Setting>
+    <Setting Name="EmployerServicePortal_Service1_Service1" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://10.234.242.11/wealthbox/service1.asmx</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

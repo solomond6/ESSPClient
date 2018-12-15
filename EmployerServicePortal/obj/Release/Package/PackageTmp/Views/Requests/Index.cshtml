@@ -1,0 +1,461 @@
+﻿
+@{
+    ViewBag.Title = "View";
+}
+@Html.Partial("_SideMenu")
+<div class="m-grid__item m-grid__item--fluid m-wrapper">
+    <div class="m-subheader ">
+        <div class="d-flex align-items-center">
+            <div class="mr-auto">
+                <h3 class="m-subheader__title m-subheader__title--separator">
+                    Request Manager
+                </h3>
+                <ul class="m-subheader__breadcrumbs m-nav m-nav--inline">
+                    <li class="m-nav__item m-nav__item--home">
+                        <a href="#" class="m-nav__link m-nav__link--icon">
+                            <i class="m-nav__link-icon la la-home"></i>
+                        </a>
+                    </li>
+                    <li class="m-nav__separator">
+                        -
+                    </li>
+                    <li class="m-nav__item">
+                        <a href="" class="m-nav__link">
+                            <span class="m-nav__link-text">
+                                Request List
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                
+            </div>
+        </div>
+    </div>
+    <div class="m-content">
+        <div class="m-portlet m-portlet--mobile">
+            <div class="m-portlet__head">
+                <div class="m-portlet__head-caption">
+                    <div class="m-portlet__head-title">
+                        <h3 class="m-portlet__head-text">
+                            Request List
+                        </h3>
+                    </div>
+                </div>
+                <div class="m-portlet__head-tools">
+                    <!--<ul class="m-portlet__nav">
+                        <li class="m-portlet__nav-item">
+                            <a href="@Url.Action("Create", "Employee")" class="btn btn-focus m-btn m-btn--custom m-btn--icon m-btn--air m-btn--pill">
+                                <span>
+                                    <i class="la la-plus"></i>
+                                    <span>New Complaint</span>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>-->
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                        <span>
+                            <i class="la la-plus"></i>
+                            <span>New Request</span>
+                        </span>
+                    </button>
+                </div>
+            </div>
+            <div class="m-portlet__body">
+                @if (TempData["error"] != null)
+                {
+                    <alert class="alert alert-danger">@TempData["error"]</alert>
+                }
+                @if (TempData["msg"] != null)
+                {
+                    <alert class="alert alert-success">@TempData["msg"]</alert>
+                }
+                <div class="m_datatable m-datatable m-datatable--default m-datatable--loaded">
+                    <table id="employer-data-table" class="datatable__table table table-striped" width="100%">
+                        <thead>
+                            <tr>
+                                <th scope="col">RequestId</th>
+                                <th scope="col">Category</th>
+                                <th scope="col">Comment</th>
+                                <th scope="col">Date Created</th>
+                                <th scope="col">Status</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" id="exampleModalLabel">New Request</h2>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form name="request" action='@Url.Action("Create", "Requests")' method="post" enctype="multipart/form-data">
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="recipient-name" class="col-form-label">Request Category:</label>
+                        <select name="requestCategory" id="requestCategory" class="form-control" required>
+                            <option value="">-Select A Complaint category-</option>
+                        </select>
+                    </div>
+                    <div class="m-form__help description"></div>
+                    <div class="m-form__help documentLinks"></div>
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label">Message:</label>
+                        <textarea name="Comment" class="form-control" id="message-text" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label">Attachment:</label>
+                        <small>File size must be less than 4mb and file type accepted includes jpg, png, gif, doc, pdf, .xls, xlsx </small>
+                        <div class="field_wrapper1">
+                            <div class="input-group mb-3">
+                                <div class="custom-file">
+                                    <input type="file" name="attachFile4" class="custom-file-input" id="iUpload4" onchange="readURL4(this);">
+                                    <label class="custom-file-label" for="inputGroupFile02">Choose file</label>
+                                </div>
+                            </div>
+                            <div style="color:red;" class="errorMsg"></div>
+                            <input type="hidden" name="convertedFile" class="form-control" id="base4" />
+                            <input type="hidden" name="fileExt" class="form-control" id="ext4" />
+                        </div>
+                        <div class="field_wrapper">
+                            <div class="input-group mb-3">
+                                <div class="custom-file">
+                                    <input type="file" name="attachFile" class="custom-file-input" id="iUpload" onchange="readURL(this);">
+                                    <label class="custom-file-label" for="inputGroupFile02">Choose file</label>
+                                </div>
+                            </div>
+                            <input type="hidden" name="convertedFile" class="form-control" id="base"/>
+                            <input type="hidden" name="fileExt" class="form-control" id="ext" />
+                        </div>
+                        <div class="field_wrapper">
+                            <div class="input-group mb-3">
+                                <div class="custom-file">
+                                    <input type="file" name="attachFile1" class="custom-file-input" id="iUpload1" onchange="readURL1(this);">
+                                    <label class="custom-file-label" for="inputGroupFile02">Choose file</label>
+                                </div>
+                            </div>
+                            <input type="hidden" name="convertedFile1" class="form-control" id="base1" />
+                            <input type="hidden" name="fileExt1" class="form-control" id="ext1" />
+                        </div>
+                        <div class="field_wrapper">
+                            <div class="input-group mb-3">
+                                <div class="custom-file">
+                                    <input type="file" name="attachFile2" class="custom-file-input" id="iUpload2" onchange="readURL2(this);">
+                                    <label class="custom-file-label" for="inputGroupFile02">Choose file</label>
+                                </div>
+                            </div>
+                            <input type="hidden" name="convertedFile2" class="form-control" id="base2" />
+                            <input type="hidden" name="fileExt2" class="form-control" id="ext2" />
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary" id="saveChanges">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/bootstrap")
+
+<script type="text/javascript">
+    var requestData = [];
+    $.ajax({
+        type: "GET",
+        url: "@Url.Action("GetRequestCategory", "Requests")",
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        success: function (data) {
+            $.each(data, function (index, item) {
+                requestData = item;
+                jQuery.grep(item, function(requestCategory, i) {
+                     $('#requestCategory').append($('<option>', {
+                        value: requestCategory.ID,
+                        text: requestCategory.Descr
+                    }));
+                });
+            });
+        }
+    });
+
+    $(".field_wrapper1").hide();
+    $(document).on("change", "#requestCategory", function(){
+        $("#requestCategory").val();
+        $("#saveChanges").attr("disabled", false);
+        var result = [];
+        for (var i = 0; i < requestData.length; i++)
+        {
+            if (requestData[i].ID == $("#requestCategory").val())
+            {
+                result.push(requestData[i]);
+                $('.description').html(requestData[i].Dynamictext);
+                documentLinks = requestData[i].Dynamicurl;
+                $('.documentLinks').html(documentLinks.replace("~", ", "));
+            }
+            if($("#requestCategory").val() == 9){
+                $(".field_wrapper").hide();
+                $(".field_wrapper1").show();
+            }else{
+                $(".field_wrapper").show();
+                $(".field_wrapper1").hide();
+            }
+        }
+        //console.log(result);
+    });
+
+
+    function readURL(input) {
+        var iUpload = document.getElementById("iUpload");
+        var regex = new RegExp("([a-zA-Z0-9\s_\\.\-:])+(.jpg|.png|.gif|.pdf|.doc|.docx|.xls|.xlsx|.csv)$");
+        if (regex.test(iUpload.value.toLowerCase())){
+		    if (input.files && input.files[0]) {
+			    var reader = new FileReader();
+                var fsize = iUpload.files[0].size;
+                var conVertSize = Math.round((fsize / 1024));
+                if(conVertSize > "4000"){
+                    alert("Document size exceeds 4mb.");
+                    $("#iUpload2").val("");
+                    $('#ext').val("");
+                    return false;
+                }else{
+                    reader.onload = function (e) {
+				        $('#falseinput').attr('src', e.target.result);
+				        $('#base').val(e.target.result);
+                        $('#ext').val($('#iUpload').val().split('.').pop());
+			        };
+			        reader.readAsDataURL(input.files[0]);
+                }
+		    }
+        }
+        else {
+            alert("Please select a valid Image file.");
+            $("#iUpload").val("");
+            return false;
+        }
+	}
+
+    function readURL1(input) {
+        var iUpload1 = document.getElementById("iUpload1");
+        var regex1 = new RegExp("([a-zA-Z0-9\s_\\.\-:])+(.jpg|.png|.gif|.pdf|.doc|.docx|.xls|.xlsx|.csv)$");
+        if (regex1.test(iUpload1.value.toLowerCase())) {
+		    if (input.files && input.files[0]) {
+			    var reader1 = new FileReader();
+                var fsize1 = iUpload1.files[0].size;
+                var conVertSize1 = Math.round((fsize1 / 1024));
+                if(conVertSize1 > "4000"){
+                    alert("Document size exceeds 4mb.");
+                    $("#iUpload2").val("");
+                    return false;
+                }else{
+                    reader1.onload = function (e) {
+				        $('#falseinput').attr('src', e.target.result);
+				        $('#base1').val(e.target.result);
+                        $('#ext1').val($('#iUpload').val().split('.').pop());
+			        };
+			        reader1.readAsDataURL(input.files[0]);
+                }
+		    }
+        }
+        else {
+            alert("Please select a valid Image file.");
+            $("#iUpload1").val("");
+            return false;
+        }
+	}
+
+    function readURL2(input) {
+        var iUpload2 = document.getElementById("iUpload2");
+        var regex2 = new RegExp("([a-zA-Z0-9\s_\\.\-:])+(.jpg|.png|.gif|.pdf|.doc|.docx|.xls|.xlsx|.csv)$");
+        if (regex2.test(iUpload2.value.toLowerCase())) {
+		    if (input.files && input.files[0]) {
+			    var reader2 = new FileReader();
+                var fsize2 = iUpload2.files[0].size;
+                var conVertSize2 = Math.round((fsize2 / 1024));
+                if(conVertSize2 > "4000"){
+                    alert("Document size exceeds 4mb.");
+                    $("#iUpload2").val("");
+                    return false;
+                }else{
+                    reader2.onload = function (e) {
+				        $('#falseinput').attr('src', e.target.result);
+				        $('#base2').val(e.target.result);
+                        $('#ext2').val($('#iUpload').val().split('.').pop());
+			        };
+			        reader2.readAsDataURL(input.files[0]);
+                }
+		    }
+        }
+        else {
+            alert("Please select a valid Image file.");
+            $("#iUpload2").val("");
+            return false;
+        }
+	}
+
+    function readURL4(input) {
+        var iUpload2 = document.getElementById("iUpload4");
+        var regex4 = new RegExp("([a-zA-Z0-9\s_\\.\-:])+(.csv)$");
+        if (regex4.test(iUpload4.value.toLowerCase())) {
+		    if (input.files && input.files[0]) {
+			    var reader4 = new FileReader();
+                var fsize4 = iUpload4.files[0].size;
+                var conVertSize4 = Math.round((fsize4 / 1024));
+                if(conVertSize4 > "4000"){
+                    alert("Document size exceeds 4mb.");
+                    $("#iUpload4").val("");
+                    return false;
+                }else{
+                    var data = new FormData();
+                    var files = $("#iUpload4").get(0).files;
+                    if (files.length > 0) {
+                        data.append("UploadedImage", files[0]);
+                    }
+                    var ajaxRequest = $.ajax({
+                       type: "POST",
+                       url: "@Url.Action("ValidateAESSchedules", "Schedules")",
+                       contentType: false,
+                       processData: false,
+                       data: data,
+                       beforeSend: function(){
+                            $("#saveChanges").attr("disabled", true);
+                       },
+                    });
+                    ajaxRequest.done(function (xhr, textStatus) {
+                        var response = xhr.data;
+                        if(response == "Schedule Validation successful"){
+                            $("#saveChanges").attr("disabled", false);
+                            $(".errorMsg").html("");
+                            reader4.onload = function (e) {
+				                $('#falseinput').attr('src', e.target.result);
+				                $('#base4').val(e.target.result);
+                                $('#ext4').val($('#iUpload4').val().split('.').pop());
+			                };
+			                reader4.readAsDataURL(input.files[0]);
+
+                        }else{
+                            alert(response);
+                            $(".errorMsg").html("Schedule is faulty, kindly upload the correct schedule to continue.");
+                            $("#iUpload4").val("");
+                            return false;
+                        }
+                    });
+                }
+		    }
+        }
+        else {
+            alert("Please select a valid file format (.csv).");
+            $("#iUpload4").val("");
+            return false;
+        }
+	}
+
+    var EmployerID = "@Session["EMPLOYER_ID"]";
+    var WebUserID = "@Session["WebUserID"]";
+    var RoleId = "@Session["ROLE_ID"]";
+
+    var assetListVM;
+        $(function () {
+            assetListVM = {
+                dt: null,
+                init: function () {
+                    dt = $('#employer-data-table').DataTable({
+                        "serverSide": true,
+                        "language": {
+                             "processing": "<img src='../img/spinner.gif'>"
+                        },
+                        "processing": true,
+                        "StateSave": false,
+                        "ajax": {
+                            "type": 'GET',
+                            "url": "@Url.Action("GetRequests", "Requests")",
+                            "data": {EmployerID: EmployerID}
+                        },
+                        "columns": [
+                            {"data": "RequestID"},
+                            {"data": "Category" },
+                            {"data": "Comment"},
+                            {"data": "Datecreated" },
+                            {"data": "CurrentStatus" },
+                            {}
+                        ],
+                        "aoColumns": [
+                            {"mData": "RequestID", sDefaultContent: ""},
+                            {"mData": "Category", sDefaultContent: ""},
+                            {"mData": "Comment", sDefaultContent: ""},
+                            {"mData": "Datecreated", sDefaultContent: ""},
+                            {"mData": "CurrentStatus", sDefaultContent: ""},
+                            {}
+                        ],
+                        responsive: {
+                           details: {
+                               display: $.fn.dataTable.Responsive.display.modal( {
+                                   header: function ( row ) {
+                                       var data = row.data();
+                                       return 'Employer Details';
+                                   }
+                               } ),
+                               renderer: $.fn.dataTable.Responsive.renderer.tableAll( {
+                                   tableClass: 'table'
+                               } )
+                           }
+                       },
+                       columnDefs: [
+                            {
+                               "searchable": false,
+                               "orderable": false,
+                               "targets": -1
+                            },{
+                               "data": null,
+                               "defaultContent": "",
+                               "targets": -1
+                            },
+                            { targets : [4],
+                              mRender : function (data, type, row, meta) {
+                                    localStorage.setItem("CommentId_"+row.RequestID, row.Comment);
+                                    if(row.CurrentStatus == "Initiated"){
+                                        return '<button class="btn btn-danger">INITIATED</button>';
+                                    }else if(row.CurrentStatus == "Assigned"){
+                                        return '<button class="btn btn-warning">ASSIGNED</button>';
+                                    }else if(row.CurrentStatus == "Cancelled"){
+                                        return '<button class="btn btn-dark">CANCELLED</button>';
+                                    }else if(row.CurrentStatus == "Resolved"){
+                                        return '<button class="btn btn-success">RESOLVED</button>';
+                                    }
+                              }
+                            },
+                            { targets : [5],
+                                  mRender : function (data, type, row, meta) {
+                                        if(row.CurrentStatus == "Assigned" && row.CurrentAssignedToID == WebUserID && row.CurrentAssignedRoleID == RoleId){
+                                            var userId = row.USER_NAME;
+                                            var url = '@Url.Action("Details", "Requests")' + '?RequestId=' + row.RequestID;
+                                            return '<a href="'+url+'" class="btn btn-info viewdetails" data-container="body" data-toggle="m-tooltip" data-placement="top" data-original-title="View Details" title="View Details">View Details</a>';
+                                        }
+                                  }
+                            }
+                        ],
+                        "lengthMenu": [[10, 25, 50, 100], [10, 25, 50, 100]],
+                    });
+                }
+            }
+            // initialize the datatables
+            assetListVM.init();
+        });
+
+    $(document).on('click', '.viewdetails', function(){
+        var RequestId = $(this).closest('tr').find('td:nth-child(1)').text();
+        localStorage.setItem("RequestId", RequestId)
+    });
+</script>
+

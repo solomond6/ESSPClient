@@ -1,0 +1,2135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="formatGSMnum4SMS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Phone_num" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="formatGSMnum4SMSResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="formatGSMnum4SMSResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidateGSMnum">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Phone_num" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidateGSMnumResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ValidateGSMnumResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetADDistributionLIST">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetADDistributionLISTResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetADDistributionLISTResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetADDisplayName_SIAML">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetADDisplayName_SIAMLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetADDisplayName_SIAMLResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetADDisplayName_SIAML_nopass">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetADDisplayName_SIAML_nopassResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetADDisplayName_SIAML_nopassResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetADDisplayName_SIPML">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetADDisplayName_SIPMLResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetADDisplayName_SIPMLResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetADDisplayName_SIPML_nopass_email">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetADDisplayName_SIPML_nopass_emailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetADDisplayName_SIPML_nopass_emailResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetADDisplayName_SIAML_nopass_email">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetADDisplayName_SIAML_nopass_emailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetADDisplayName_SIAML_nopass_emailResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTransStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OrderID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MerchantID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTransStatusResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTransStatusResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTransDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OrderID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MerchantID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTransDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTransDetailsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Geterrors">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OrderID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MerchantID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="uno" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GeterrorsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GeterrorsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetADDisplayName_SIPML_nopass">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetADDisplayName_SIPML_nopassResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetADDisplayName_SIPML_nopassResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DoNIP">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AccountNumber" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DestinationBankCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DoNIPResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DoNIPResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buildstring">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="tkt" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="eacct" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="buildstringResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="buildstringResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="logtoken">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="user" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ftype" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tk" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="amt" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="proctocall" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="penalty" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="bcode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="bname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="trsfacct" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="thisref" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="logtokenResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="logtokenResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Completeit_">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="user" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ftype" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tk" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="amt" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="penalty" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="bcode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="bname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cname" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="trsfacct" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="thisref" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Completeit_Response">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Completeit_Result" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="confirmtokenexempt">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="eacct" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="confirmtokenexemptResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="confirmtokenexemptResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="createtoken">
+        <s:complexType />
+      </s:element>
+      <s:element name="createtokenResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="createtokenResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ENCRY">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="toks" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ENCRYResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ENCRYResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DECRY">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="entoks" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DECRYResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DECRYResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getsession">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sessid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="eacct" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="uniqsno" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getsessionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getsessionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updatesession">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sessid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="eacct" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="uniqsno" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updatesessionResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="Confirmpenaltybalance">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Amt" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="eact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dys" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ConfirmpenaltybalanceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ConfirmpenaltybalanceResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Encryptfx">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="expression" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="EncryptfxResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EncryptfxResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Decryptfx">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="expression" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="key" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DecryptfxResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DecryptfxResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+      <s:element name="boolean" type="s:boolean" />
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="formatGSMnum4SMSSoapIn">
+    <wsdl:part name="parameters" element="tns:formatGSMnum4SMS" />
+  </wsdl:message>
+  <wsdl:message name="formatGSMnum4SMSSoapOut">
+    <wsdl:part name="parameters" element="tns:formatGSMnum4SMSResponse" />
+  </wsdl:message>
+  <wsdl:message name="ValidateGSMnumSoapIn">
+    <wsdl:part name="parameters" element="tns:ValidateGSMnum" />
+  </wsdl:message>
+  <wsdl:message name="ValidateGSMnumSoapOut">
+    <wsdl:part name="parameters" element="tns:ValidateGSMnumResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetADDistributionLISTSoapIn">
+    <wsdl:part name="parameters" element="tns:GetADDistributionLIST" />
+  </wsdl:message>
+  <wsdl:message name="GetADDistributionLISTSoapOut">
+    <wsdl:part name="parameters" element="tns:GetADDistributionLISTResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetADDisplayName_SIAMLSoapIn">
+    <wsdl:part name="parameters" element="tns:GetADDisplayName_SIAML" />
+  </wsdl:message>
+  <wsdl:message name="GetADDisplayName_SIAMLSoapOut">
+    <wsdl:part name="parameters" element="tns:GetADDisplayName_SIAMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetADDisplayName_SIAML_nopassSoapIn">
+    <wsdl:part name="parameters" element="tns:GetADDisplayName_SIAML_nopass" />
+  </wsdl:message>
+  <wsdl:message name="GetADDisplayName_SIAML_nopassSoapOut">
+    <wsdl:part name="parameters" element="tns:GetADDisplayName_SIAML_nopassResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetADDisplayName_SIPMLSoapIn">
+    <wsdl:part name="parameters" element="tns:GetADDisplayName_SIPML" />
+  </wsdl:message>
+  <wsdl:message name="GetADDisplayName_SIPMLSoapOut">
+    <wsdl:part name="parameters" element="tns:GetADDisplayName_SIPMLResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetADDisplayName_SIPML_nopass_emailSoapIn">
+    <wsdl:part name="parameters" element="tns:GetADDisplayName_SIPML_nopass_email" />
+  </wsdl:message>
+  <wsdl:message name="GetADDisplayName_SIPML_nopass_emailSoapOut">
+    <wsdl:part name="parameters" element="tns:GetADDisplayName_SIPML_nopass_emailResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetADDisplayName_SIAML_nopass_emailSoapIn">
+    <wsdl:part name="parameters" element="tns:GetADDisplayName_SIAML_nopass_email" />
+  </wsdl:message>
+  <wsdl:message name="GetADDisplayName_SIAML_nopass_emailSoapOut">
+    <wsdl:part name="parameters" element="tns:GetADDisplayName_SIAML_nopass_emailResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTransStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTransStatus" />
+  </wsdl:message>
+  <wsdl:message name="GetTransStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTransStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTransDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTransDetails" />
+  </wsdl:message>
+  <wsdl:message name="GetTransDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTransDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GeterrorsSoapIn">
+    <wsdl:part name="parameters" element="tns:Geterrors" />
+  </wsdl:message>
+  <wsdl:message name="GeterrorsSoapOut">
+    <wsdl:part name="parameters" element="tns:GeterrorsResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetADDisplayName_SIPML_nopassSoapIn">
+    <wsdl:part name="parameters" element="tns:GetADDisplayName_SIPML_nopass" />
+  </wsdl:message>
+  <wsdl:message name="GetADDisplayName_SIPML_nopassSoapOut">
+    <wsdl:part name="parameters" element="tns:GetADDisplayName_SIPML_nopassResponse" />
+  </wsdl:message>
+  <wsdl:message name="DoNIPSoapIn">
+    <wsdl:part name="parameters" element="tns:DoNIP" />
+  </wsdl:message>
+  <wsdl:message name="DoNIPSoapOut">
+    <wsdl:part name="parameters" element="tns:DoNIPResponse" />
+  </wsdl:message>
+  <wsdl:message name="buildstringSoapIn">
+    <wsdl:part name="parameters" element="tns:buildstring" />
+  </wsdl:message>
+  <wsdl:message name="buildstringSoapOut">
+    <wsdl:part name="parameters" element="tns:buildstringResponse" />
+  </wsdl:message>
+  <wsdl:message name="logtokenSoapIn">
+    <wsdl:part name="parameters" element="tns:logtoken" />
+  </wsdl:message>
+  <wsdl:message name="logtokenSoapOut">
+    <wsdl:part name="parameters" element="tns:logtokenResponse" />
+  </wsdl:message>
+  <wsdl:message name="Completeit_SoapIn">
+    <wsdl:part name="parameters" element="tns:Completeit_" />
+  </wsdl:message>
+  <wsdl:message name="Completeit_SoapOut">
+    <wsdl:part name="parameters" element="tns:Completeit_Response" />
+  </wsdl:message>
+  <wsdl:message name="confirmtokenexemptSoapIn">
+    <wsdl:part name="parameters" element="tns:confirmtokenexempt" />
+  </wsdl:message>
+  <wsdl:message name="confirmtokenexemptSoapOut">
+    <wsdl:part name="parameters" element="tns:confirmtokenexemptResponse" />
+  </wsdl:message>
+  <wsdl:message name="createtokenSoapIn">
+    <wsdl:part name="parameters" element="tns:createtoken" />
+  </wsdl:message>
+  <wsdl:message name="createtokenSoapOut">
+    <wsdl:part name="parameters" element="tns:createtokenResponse" />
+  </wsdl:message>
+  <wsdl:message name="ENCRYSoapIn">
+    <wsdl:part name="parameters" element="tns:ENCRY" />
+  </wsdl:message>
+  <wsdl:message name="ENCRYSoapOut">
+    <wsdl:part name="parameters" element="tns:ENCRYResponse" />
+  </wsdl:message>
+  <wsdl:message name="DECRYSoapIn">
+    <wsdl:part name="parameters" element="tns:DECRY" />
+  </wsdl:message>
+  <wsdl:message name="DECRYSoapOut">
+    <wsdl:part name="parameters" element="tns:DECRYResponse" />
+  </wsdl:message>
+  <wsdl:message name="getsessionSoapIn">
+    <wsdl:part name="parameters" element="tns:getsession" />
+  </wsdl:message>
+  <wsdl:message name="getsessionSoapOut">
+    <wsdl:part name="parameters" element="tns:getsessionResponse" />
+  </wsdl:message>
+  <wsdl:message name="updatesessionSoapIn">
+    <wsdl:part name="parameters" element="tns:updatesession" />
+  </wsdl:message>
+  <wsdl:message name="updatesessionSoapOut">
+    <wsdl:part name="parameters" element="tns:updatesessionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ConfirmpenaltybalanceSoapIn">
+    <wsdl:part name="parameters" element="tns:Confirmpenaltybalance" />
+  </wsdl:message>
+  <wsdl:message name="ConfirmpenaltybalanceSoapOut">
+    <wsdl:part name="parameters" element="tns:ConfirmpenaltybalanceResponse" />
+  </wsdl:message>
+  <wsdl:message name="EncryptfxSoapIn">
+    <wsdl:part name="parameters" element="tns:Encryptfx" />
+  </wsdl:message>
+  <wsdl:message name="EncryptfxSoapOut">
+    <wsdl:part name="parameters" element="tns:EncryptfxResponse" />
+  </wsdl:message>
+  <wsdl:message name="DecryptfxSoapIn">
+    <wsdl:part name="parameters" element="tns:Decryptfx" />
+  </wsdl:message>
+  <wsdl:message name="DecryptfxSoapOut">
+    <wsdl:part name="parameters" element="tns:DecryptfxResponse" />
+  </wsdl:message>
+  <wsdl:message name="formatGSMnum4SMSHttpGetIn">
+    <wsdl:part name="Phone_num" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="formatGSMnum4SMSHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ValidateGSMnumHttpGetIn">
+    <wsdl:part name="Phone_num" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ValidateGSMnumHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetADDistributionLISTHttpGetIn">
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetADDistributionLISTHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetADDisplayName_SIAMLHttpGetIn">
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetADDisplayName_SIAMLHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetADDisplayName_SIAML_nopassHttpGetIn">
+    <wsdl:part name="UserName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetADDisplayName_SIAML_nopassHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetADDisplayName_SIPMLHttpGetIn">
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetADDisplayName_SIPMLHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetADDisplayName_SIPML_nopass_emailHttpGetIn">
+    <wsdl:part name="UserName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetADDisplayName_SIPML_nopass_emailHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetADDisplayName_SIAML_nopass_emailHttpGetIn">
+    <wsdl:part name="UserName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetADDisplayName_SIAML_nopass_emailHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTransStatusHttpGetIn">
+    <wsdl:part name="OrderID" type="s:string" />
+    <wsdl:part name="MerchantID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTransStatusHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTransDetailsHttpGetIn">
+    <wsdl:part name="OrderID" type="s:string" />
+    <wsdl:part name="MerchantID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTransDetailsHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GeterrorsHttpGetIn">
+    <wsdl:part name="OrderID" type="s:string" />
+    <wsdl:part name="MerchantID" type="s:string" />
+    <wsdl:part name="uno" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GeterrorsHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetADDisplayName_SIPML_nopassHttpGetIn">
+    <wsdl:part name="UserName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetADDisplayName_SIPML_nopassHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="DoNIPHttpGetIn">
+    <wsdl:part name="AccountNumber" type="s:string" />
+    <wsdl:part name="DestinationBankCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DoNIPHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="buildstringHttpGetIn">
+    <wsdl:part name="tkt" type="s:string" />
+    <wsdl:part name="fname" type="s:string" />
+    <wsdl:part name="eacct" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="buildstringHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="logtokenHttpGetIn">
+    <wsdl:part name="user" type="s:string" />
+    <wsdl:part name="ftype" type="s:string" />
+    <wsdl:part name="tk" type="s:string" />
+    <wsdl:part name="amt" type="s:string" />
+    <wsdl:part name="proctocall" type="s:string" />
+    <wsdl:part name="penalty" type="s:string" />
+    <wsdl:part name="bcode" type="s:string" />
+    <wsdl:part name="bname" type="s:string" />
+    <wsdl:part name="cname" type="s:string" />
+    <wsdl:part name="trsfacct" type="s:string" />
+    <wsdl:part name="thisref" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="logtokenHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="Completeit_HttpGetIn">
+    <wsdl:part name="user" type="s:string" />
+    <wsdl:part name="ftype" type="s:string" />
+    <wsdl:part name="tk" type="s:string" />
+    <wsdl:part name="amt" type="s:string" />
+    <wsdl:part name="penalty" type="s:string" />
+    <wsdl:part name="bcode" type="s:string" />
+    <wsdl:part name="bname" type="s:string" />
+    <wsdl:part name="cname" type="s:string" />
+    <wsdl:part name="trsfacct" type="s:string" />
+    <wsdl:part name="thisref" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Completeit_HttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="confirmtokenexemptHttpGetIn">
+    <wsdl:part name="eacct" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="confirmtokenexemptHttpGetOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="createtokenHttpGetIn" />
+  <wsdl:message name="createtokenHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ENCRYHttpGetIn">
+    <wsdl:part name="toks" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ENCRYHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="DECRYHttpGetIn">
+    <wsdl:part name="entoks" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DECRYHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="getsessionHttpGetIn">
+    <wsdl:part name="sessid" type="s:string" />
+    <wsdl:part name="eacct" type="s:string" />
+    <wsdl:part name="uniqsno" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getsessionHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="updatesessionHttpGetIn">
+    <wsdl:part name="sessid" type="s:string" />
+    <wsdl:part name="eacct" type="s:string" />
+    <wsdl:part name="uniqsno" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="updatesessionHttpGetOut" />
+  <wsdl:message name="ConfirmpenaltybalanceHttpGetIn">
+    <wsdl:part name="Amt" type="s:string" />
+    <wsdl:part name="fid" type="s:string" />
+    <wsdl:part name="eact" type="s:string" />
+    <wsdl:part name="dys" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConfirmpenaltybalanceHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="EncryptfxHttpGetIn">
+    <wsdl:part name="expression" type="s:string" />
+    <wsdl:part name="key" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="EncryptfxHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="DecryptfxHttpGetIn">
+    <wsdl:part name="expression" type="s:string" />
+    <wsdl:part name="key" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DecryptfxHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="formatGSMnum4SMSHttpPostIn">
+    <wsdl:part name="Phone_num" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="formatGSMnum4SMSHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ValidateGSMnumHttpPostIn">
+    <wsdl:part name="Phone_num" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ValidateGSMnumHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetADDistributionLISTHttpPostIn">
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetADDistributionLISTHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetADDisplayName_SIAMLHttpPostIn">
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetADDisplayName_SIAMLHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetADDisplayName_SIAML_nopassHttpPostIn">
+    <wsdl:part name="UserName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetADDisplayName_SIAML_nopassHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetADDisplayName_SIPMLHttpPostIn">
+    <wsdl:part name="UserName" type="s:string" />
+    <wsdl:part name="Password" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetADDisplayName_SIPMLHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetADDisplayName_SIPML_nopass_emailHttpPostIn">
+    <wsdl:part name="UserName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetADDisplayName_SIPML_nopass_emailHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetADDisplayName_SIAML_nopass_emailHttpPostIn">
+    <wsdl:part name="UserName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetADDisplayName_SIAML_nopass_emailHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTransStatusHttpPostIn">
+    <wsdl:part name="OrderID" type="s:string" />
+    <wsdl:part name="MerchantID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTransStatusHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTransDetailsHttpPostIn">
+    <wsdl:part name="OrderID" type="s:string" />
+    <wsdl:part name="MerchantID" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetTransDetailsHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GeterrorsHttpPostIn">
+    <wsdl:part name="OrderID" type="s:string" />
+    <wsdl:part name="MerchantID" type="s:string" />
+    <wsdl:part name="uno" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GeterrorsHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetADDisplayName_SIPML_nopassHttpPostIn">
+    <wsdl:part name="UserName" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetADDisplayName_SIPML_nopassHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="DoNIPHttpPostIn">
+    <wsdl:part name="AccountNumber" type="s:string" />
+    <wsdl:part name="DestinationBankCode" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DoNIPHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="buildstringHttpPostIn">
+    <wsdl:part name="tkt" type="s:string" />
+    <wsdl:part name="fname" type="s:string" />
+    <wsdl:part name="eacct" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="buildstringHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="logtokenHttpPostIn">
+    <wsdl:part name="user" type="s:string" />
+    <wsdl:part name="ftype" type="s:string" />
+    <wsdl:part name="tk" type="s:string" />
+    <wsdl:part name="amt" type="s:string" />
+    <wsdl:part name="proctocall" type="s:string" />
+    <wsdl:part name="penalty" type="s:string" />
+    <wsdl:part name="bcode" type="s:string" />
+    <wsdl:part name="bname" type="s:string" />
+    <wsdl:part name="cname" type="s:string" />
+    <wsdl:part name="trsfacct" type="s:string" />
+    <wsdl:part name="thisref" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="logtokenHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="Completeit_HttpPostIn">
+    <wsdl:part name="user" type="s:string" />
+    <wsdl:part name="ftype" type="s:string" />
+    <wsdl:part name="tk" type="s:string" />
+    <wsdl:part name="amt" type="s:string" />
+    <wsdl:part name="penalty" type="s:string" />
+    <wsdl:part name="bcode" type="s:string" />
+    <wsdl:part name="bname" type="s:string" />
+    <wsdl:part name="cname" type="s:string" />
+    <wsdl:part name="trsfacct" type="s:string" />
+    <wsdl:part name="thisref" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="Completeit_HttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="confirmtokenexemptHttpPostIn">
+    <wsdl:part name="eacct" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="confirmtokenexemptHttpPostOut">
+    <wsdl:part name="Body" element="tns:boolean" />
+  </wsdl:message>
+  <wsdl:message name="createtokenHttpPostIn" />
+  <wsdl:message name="createtokenHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ENCRYHttpPostIn">
+    <wsdl:part name="toks" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ENCRYHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="DECRYHttpPostIn">
+    <wsdl:part name="entoks" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DECRYHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="getsessionHttpPostIn">
+    <wsdl:part name="sessid" type="s:string" />
+    <wsdl:part name="eacct" type="s:string" />
+    <wsdl:part name="uniqsno" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getsessionHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="updatesessionHttpPostIn">
+    <wsdl:part name="sessid" type="s:string" />
+    <wsdl:part name="eacct" type="s:string" />
+    <wsdl:part name="uniqsno" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="updatesessionHttpPostOut" />
+  <wsdl:message name="ConfirmpenaltybalanceHttpPostIn">
+    <wsdl:part name="Amt" type="s:string" />
+    <wsdl:part name="fid" type="s:string" />
+    <wsdl:part name="eact" type="s:string" />
+    <wsdl:part name="dys" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ConfirmpenaltybalanceHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="EncryptfxHttpPostIn">
+    <wsdl:part name="expression" type="s:string" />
+    <wsdl:part name="key" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="EncryptfxHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="DecryptfxHttpPostIn">
+    <wsdl:part name="expression" type="s:string" />
+    <wsdl:part name="key" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DecryptfxHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:portType name="Service1Soap">
+    <wsdl:operation name="formatGSMnum4SMS">
+      <wsdl:input message="tns:formatGSMnum4SMSSoapIn" />
+      <wsdl:output message="tns:formatGSMnum4SMSSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateGSMnum">
+      <wsdl:input message="tns:ValidateGSMnumSoapIn" />
+      <wsdl:output message="tns:ValidateGSMnumSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetADDistributionLIST">
+      <wsdl:input message="tns:GetADDistributionLISTSoapIn" />
+      <wsdl:output message="tns:GetADDistributionLISTSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetADDisplayName_SIAML">
+      <wsdl:input message="tns:GetADDisplayName_SIAMLSoapIn" />
+      <wsdl:output message="tns:GetADDisplayName_SIAMLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetADDisplayName_SIAML_nopass">
+      <wsdl:input message="tns:GetADDisplayName_SIAML_nopassSoapIn" />
+      <wsdl:output message="tns:GetADDisplayName_SIAML_nopassSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetADDisplayName_SIPML">
+      <wsdl:input message="tns:GetADDisplayName_SIPMLSoapIn" />
+      <wsdl:output message="tns:GetADDisplayName_SIPMLSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetADDisplayName_SIPML_nopass_email">
+      <wsdl:input message="tns:GetADDisplayName_SIPML_nopass_emailSoapIn" />
+      <wsdl:output message="tns:GetADDisplayName_SIPML_nopass_emailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetADDisplayName_SIAML_nopass_email">
+      <wsdl:input message="tns:GetADDisplayName_SIAML_nopass_emailSoapIn" />
+      <wsdl:output message="tns:GetADDisplayName_SIAML_nopass_emailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTransStatus">
+      <wsdl:input message="tns:GetTransStatusSoapIn" />
+      <wsdl:output message="tns:GetTransStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTransDetails">
+      <wsdl:input message="tns:GetTransDetailsSoapIn" />
+      <wsdl:output message="tns:GetTransDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Geterrors">
+      <wsdl:input message="tns:GeterrorsSoapIn" />
+      <wsdl:output message="tns:GeterrorsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetADDisplayName_SIPML_nopass">
+      <wsdl:input message="tns:GetADDisplayName_SIPML_nopassSoapIn" />
+      <wsdl:output message="tns:GetADDisplayName_SIPML_nopassSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DoNIP">
+      <wsdl:input message="tns:DoNIPSoapIn" />
+      <wsdl:output message="tns:DoNIPSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="buildstring">
+      <wsdl:input message="tns:buildstringSoapIn" />
+      <wsdl:output message="tns:buildstringSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="logtoken">
+      <wsdl:input message="tns:logtokenSoapIn" />
+      <wsdl:output message="tns:logtokenSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Completeit_">
+      <wsdl:input message="tns:Completeit_SoapIn" />
+      <wsdl:output message="tns:Completeit_SoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="confirmtokenexempt">
+      <wsdl:input message="tns:confirmtokenexemptSoapIn" />
+      <wsdl:output message="tns:confirmtokenexemptSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="createtoken">
+      <wsdl:input message="tns:createtokenSoapIn" />
+      <wsdl:output message="tns:createtokenSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ENCRY">
+      <wsdl:input message="tns:ENCRYSoapIn" />
+      <wsdl:output message="tns:ENCRYSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DECRY">
+      <wsdl:input message="tns:DECRYSoapIn" />
+      <wsdl:output message="tns:DECRYSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getsession">
+      <wsdl:input message="tns:getsessionSoapIn" />
+      <wsdl:output message="tns:getsessionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="updatesession">
+      <wsdl:input message="tns:updatesessionSoapIn" />
+      <wsdl:output message="tns:updatesessionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Confirmpenaltybalance">
+      <wsdl:input message="tns:ConfirmpenaltybalanceSoapIn" />
+      <wsdl:output message="tns:ConfirmpenaltybalanceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Encryptfx">
+      <wsdl:input message="tns:EncryptfxSoapIn" />
+      <wsdl:output message="tns:EncryptfxSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Decryptfx">
+      <wsdl:input message="tns:DecryptfxSoapIn" />
+      <wsdl:output message="tns:DecryptfxSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="Service1HttpGet">
+    <wsdl:operation name="formatGSMnum4SMS">
+      <wsdl:input message="tns:formatGSMnum4SMSHttpGetIn" />
+      <wsdl:output message="tns:formatGSMnum4SMSHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateGSMnum">
+      <wsdl:input message="tns:ValidateGSMnumHttpGetIn" />
+      <wsdl:output message="tns:ValidateGSMnumHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetADDistributionLIST">
+      <wsdl:input message="tns:GetADDistributionLISTHttpGetIn" />
+      <wsdl:output message="tns:GetADDistributionLISTHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetADDisplayName_SIAML">
+      <wsdl:input message="tns:GetADDisplayName_SIAMLHttpGetIn" />
+      <wsdl:output message="tns:GetADDisplayName_SIAMLHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetADDisplayName_SIAML_nopass">
+      <wsdl:input message="tns:GetADDisplayName_SIAML_nopassHttpGetIn" />
+      <wsdl:output message="tns:GetADDisplayName_SIAML_nopassHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetADDisplayName_SIPML">
+      <wsdl:input message="tns:GetADDisplayName_SIPMLHttpGetIn" />
+      <wsdl:output message="tns:GetADDisplayName_SIPMLHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetADDisplayName_SIPML_nopass_email">
+      <wsdl:input message="tns:GetADDisplayName_SIPML_nopass_emailHttpGetIn" />
+      <wsdl:output message="tns:GetADDisplayName_SIPML_nopass_emailHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetADDisplayName_SIAML_nopass_email">
+      <wsdl:input message="tns:GetADDisplayName_SIAML_nopass_emailHttpGetIn" />
+      <wsdl:output message="tns:GetADDisplayName_SIAML_nopass_emailHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTransStatus">
+      <wsdl:input message="tns:GetTransStatusHttpGetIn" />
+      <wsdl:output message="tns:GetTransStatusHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTransDetails">
+      <wsdl:input message="tns:GetTransDetailsHttpGetIn" />
+      <wsdl:output message="tns:GetTransDetailsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Geterrors">
+      <wsdl:input message="tns:GeterrorsHttpGetIn" />
+      <wsdl:output message="tns:GeterrorsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetADDisplayName_SIPML_nopass">
+      <wsdl:input message="tns:GetADDisplayName_SIPML_nopassHttpGetIn" />
+      <wsdl:output message="tns:GetADDisplayName_SIPML_nopassHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DoNIP">
+      <wsdl:input message="tns:DoNIPHttpGetIn" />
+      <wsdl:output message="tns:DoNIPHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="buildstring">
+      <wsdl:input message="tns:buildstringHttpGetIn" />
+      <wsdl:output message="tns:buildstringHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="logtoken">
+      <wsdl:input message="tns:logtokenHttpGetIn" />
+      <wsdl:output message="tns:logtokenHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Completeit_">
+      <wsdl:input message="tns:Completeit_HttpGetIn" />
+      <wsdl:output message="tns:Completeit_HttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="confirmtokenexempt">
+      <wsdl:input message="tns:confirmtokenexemptHttpGetIn" />
+      <wsdl:output message="tns:confirmtokenexemptHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="createtoken">
+      <wsdl:input message="tns:createtokenHttpGetIn" />
+      <wsdl:output message="tns:createtokenHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ENCRY">
+      <wsdl:input message="tns:ENCRYHttpGetIn" />
+      <wsdl:output message="tns:ENCRYHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DECRY">
+      <wsdl:input message="tns:DECRYHttpGetIn" />
+      <wsdl:output message="tns:DECRYHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getsession">
+      <wsdl:input message="tns:getsessionHttpGetIn" />
+      <wsdl:output message="tns:getsessionHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="updatesession">
+      <wsdl:input message="tns:updatesessionHttpGetIn" />
+      <wsdl:output message="tns:updatesessionHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Confirmpenaltybalance">
+      <wsdl:input message="tns:ConfirmpenaltybalanceHttpGetIn" />
+      <wsdl:output message="tns:ConfirmpenaltybalanceHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Encryptfx">
+      <wsdl:input message="tns:EncryptfxHttpGetIn" />
+      <wsdl:output message="tns:EncryptfxHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Decryptfx">
+      <wsdl:input message="tns:DecryptfxHttpGetIn" />
+      <wsdl:output message="tns:DecryptfxHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="Service1HttpPost">
+    <wsdl:operation name="formatGSMnum4SMS">
+      <wsdl:input message="tns:formatGSMnum4SMSHttpPostIn" />
+      <wsdl:output message="tns:formatGSMnum4SMSHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ValidateGSMnum">
+      <wsdl:input message="tns:ValidateGSMnumHttpPostIn" />
+      <wsdl:output message="tns:ValidateGSMnumHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetADDistributionLIST">
+      <wsdl:input message="tns:GetADDistributionLISTHttpPostIn" />
+      <wsdl:output message="tns:GetADDistributionLISTHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetADDisplayName_SIAML">
+      <wsdl:input message="tns:GetADDisplayName_SIAMLHttpPostIn" />
+      <wsdl:output message="tns:GetADDisplayName_SIAMLHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetADDisplayName_SIAML_nopass">
+      <wsdl:input message="tns:GetADDisplayName_SIAML_nopassHttpPostIn" />
+      <wsdl:output message="tns:GetADDisplayName_SIAML_nopassHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetADDisplayName_SIPML">
+      <wsdl:input message="tns:GetADDisplayName_SIPMLHttpPostIn" />
+      <wsdl:output message="tns:GetADDisplayName_SIPMLHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetADDisplayName_SIPML_nopass_email">
+      <wsdl:input message="tns:GetADDisplayName_SIPML_nopass_emailHttpPostIn" />
+      <wsdl:output message="tns:GetADDisplayName_SIPML_nopass_emailHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetADDisplayName_SIAML_nopass_email">
+      <wsdl:input message="tns:GetADDisplayName_SIAML_nopass_emailHttpPostIn" />
+      <wsdl:output message="tns:GetADDisplayName_SIAML_nopass_emailHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTransStatus">
+      <wsdl:input message="tns:GetTransStatusHttpPostIn" />
+      <wsdl:output message="tns:GetTransStatusHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTransDetails">
+      <wsdl:input message="tns:GetTransDetailsHttpPostIn" />
+      <wsdl:output message="tns:GetTransDetailsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Geterrors">
+      <wsdl:input message="tns:GeterrorsHttpPostIn" />
+      <wsdl:output message="tns:GeterrorsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetADDisplayName_SIPML_nopass">
+      <wsdl:input message="tns:GetADDisplayName_SIPML_nopassHttpPostIn" />
+      <wsdl:output message="tns:GetADDisplayName_SIPML_nopassHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DoNIP">
+      <wsdl:input message="tns:DoNIPHttpPostIn" />
+      <wsdl:output message="tns:DoNIPHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="buildstring">
+      <wsdl:input message="tns:buildstringHttpPostIn" />
+      <wsdl:output message="tns:buildstringHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="logtoken">
+      <wsdl:input message="tns:logtokenHttpPostIn" />
+      <wsdl:output message="tns:logtokenHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Completeit_">
+      <wsdl:input message="tns:Completeit_HttpPostIn" />
+      <wsdl:output message="tns:Completeit_HttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="confirmtokenexempt">
+      <wsdl:input message="tns:confirmtokenexemptHttpPostIn" />
+      <wsdl:output message="tns:confirmtokenexemptHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="createtoken">
+      <wsdl:input message="tns:createtokenHttpPostIn" />
+      <wsdl:output message="tns:createtokenHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ENCRY">
+      <wsdl:input message="tns:ENCRYHttpPostIn" />
+      <wsdl:output message="tns:ENCRYHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DECRY">
+      <wsdl:input message="tns:DECRYHttpPostIn" />
+      <wsdl:output message="tns:DECRYHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getsession">
+      <wsdl:input message="tns:getsessionHttpPostIn" />
+      <wsdl:output message="tns:getsessionHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="updatesession">
+      <wsdl:input message="tns:updatesessionHttpPostIn" />
+      <wsdl:output message="tns:updatesessionHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Confirmpenaltybalance">
+      <wsdl:input message="tns:ConfirmpenaltybalanceHttpPostIn" />
+      <wsdl:output message="tns:ConfirmpenaltybalanceHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Encryptfx">
+      <wsdl:input message="tns:EncryptfxHttpPostIn" />
+      <wsdl:output message="tns:EncryptfxHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Decryptfx">
+      <wsdl:input message="tns:DecryptfxHttpPostIn" />
+      <wsdl:output message="tns:DecryptfxHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="Service1Soap" type="tns:Service1Soap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="formatGSMnum4SMS">
+      <soap:operation soapAction="http://tempuri.org/formatGSMnum4SMS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateGSMnum">
+      <soap:operation soapAction="http://tempuri.org/ValidateGSMnum" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetADDistributionLIST">
+      <soap:operation soapAction="http://tempuri.org/GetADDistributionLIST" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetADDisplayName_SIAML">
+      <soap:operation soapAction="http://tempuri.org/GetADDisplayName_SIAML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetADDisplayName_SIAML_nopass">
+      <soap:operation soapAction="http://tempuri.org/GetADDisplayName_SIAML_nopass" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetADDisplayName_SIPML">
+      <soap:operation soapAction="http://tempuri.org/GetADDisplayName_SIPML" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetADDisplayName_SIPML_nopass_email">
+      <soap:operation soapAction="http://tempuri.org/GetADDisplayName_SIPML_nopass_email" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetADDisplayName_SIAML_nopass_email">
+      <soap:operation soapAction="http://tempuri.org/GetADDisplayName_SIAML_nopass_email" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransStatus">
+      <soap:operation soapAction="http://tempuri.org/GetTransStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransDetails">
+      <soap:operation soapAction="http://tempuri.org/GetTransDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Geterrors">
+      <soap:operation soapAction="http://tempuri.org/Geterrors" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetADDisplayName_SIPML_nopass">
+      <soap:operation soapAction="http://tempuri.org/GetADDisplayName_SIPML_nopass" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DoNIP">
+      <soap:operation soapAction="http://tempuri.org/DoNIP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buildstring">
+      <soap:operation soapAction="http://tempuri.org/buildstring" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="logtoken">
+      <soap:operation soapAction="http://tempuri.org/logtoken" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Completeit_">
+      <soap:operation soapAction="http://tempuri.org/Completeit_" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="confirmtokenexempt">
+      <soap:operation soapAction="http://tempuri.org/confirmtokenexempt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createtoken">
+      <soap:operation soapAction="http://tempuri.org/createtoken" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ENCRY">
+      <soap:operation soapAction="http://tempuri.org/ENCRY" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DECRY">
+      <soap:operation soapAction="http://tempuri.org/DECRY" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getsession">
+      <soap:operation soapAction="http://tempuri.org/getsession" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updatesession">
+      <soap:operation soapAction="http://tempuri.org/updatesession" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Confirmpenaltybalance">
+      <soap:operation soapAction="http://tempuri.org/Confirmpenaltybalance" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Encryptfx">
+      <soap:operation soapAction="http://tempuri.org/Encryptfx" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Decryptfx">
+      <soap:operation soapAction="http://tempuri.org/Decryptfx" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="Service1Soap12" type="tns:Service1Soap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="formatGSMnum4SMS">
+      <soap12:operation soapAction="http://tempuri.org/formatGSMnum4SMS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateGSMnum">
+      <soap12:operation soapAction="http://tempuri.org/ValidateGSMnum" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetADDistributionLIST">
+      <soap12:operation soapAction="http://tempuri.org/GetADDistributionLIST" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetADDisplayName_SIAML">
+      <soap12:operation soapAction="http://tempuri.org/GetADDisplayName_SIAML" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetADDisplayName_SIAML_nopass">
+      <soap12:operation soapAction="http://tempuri.org/GetADDisplayName_SIAML_nopass" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetADDisplayName_SIPML">
+      <soap12:operation soapAction="http://tempuri.org/GetADDisplayName_SIPML" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetADDisplayName_SIPML_nopass_email">
+      <soap12:operation soapAction="http://tempuri.org/GetADDisplayName_SIPML_nopass_email" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetADDisplayName_SIAML_nopass_email">
+      <soap12:operation soapAction="http://tempuri.org/GetADDisplayName_SIAML_nopass_email" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransStatus">
+      <soap12:operation soapAction="http://tempuri.org/GetTransStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransDetails">
+      <soap12:operation soapAction="http://tempuri.org/GetTransDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Geterrors">
+      <soap12:operation soapAction="http://tempuri.org/Geterrors" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetADDisplayName_SIPML_nopass">
+      <soap12:operation soapAction="http://tempuri.org/GetADDisplayName_SIPML_nopass" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DoNIP">
+      <soap12:operation soapAction="http://tempuri.org/DoNIP" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buildstring">
+      <soap12:operation soapAction="http://tempuri.org/buildstring" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="logtoken">
+      <soap12:operation soapAction="http://tempuri.org/logtoken" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Completeit_">
+      <soap12:operation soapAction="http://tempuri.org/Completeit_" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="confirmtokenexempt">
+      <soap12:operation soapAction="http://tempuri.org/confirmtokenexempt" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createtoken">
+      <soap12:operation soapAction="http://tempuri.org/createtoken" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ENCRY">
+      <soap12:operation soapAction="http://tempuri.org/ENCRY" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DECRY">
+      <soap12:operation soapAction="http://tempuri.org/DECRY" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getsession">
+      <soap12:operation soapAction="http://tempuri.org/getsession" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updatesession">
+      <soap12:operation soapAction="http://tempuri.org/updatesession" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Confirmpenaltybalance">
+      <soap12:operation soapAction="http://tempuri.org/Confirmpenaltybalance" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Encryptfx">
+      <soap12:operation soapAction="http://tempuri.org/Encryptfx" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Decryptfx">
+      <soap12:operation soapAction="http://tempuri.org/Decryptfx" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="Service1HttpGet" type="tns:Service1HttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="formatGSMnum4SMS">
+      <http:operation location="/formatGSMnum4SMS" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateGSMnum">
+      <http:operation location="/ValidateGSMnum" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetADDistributionLIST">
+      <http:operation location="/GetADDistributionLIST" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetADDisplayName_SIAML">
+      <http:operation location="/GetADDisplayName_SIAML" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetADDisplayName_SIAML_nopass">
+      <http:operation location="/GetADDisplayName_SIAML_nopass" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetADDisplayName_SIPML">
+      <http:operation location="/GetADDisplayName_SIPML" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetADDisplayName_SIPML_nopass_email">
+      <http:operation location="/GetADDisplayName_SIPML_nopass_email" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetADDisplayName_SIAML_nopass_email">
+      <http:operation location="/GetADDisplayName_SIAML_nopass_email" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransStatus">
+      <http:operation location="/GetTransStatus" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransDetails">
+      <http:operation location="/GetTransDetails" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Geterrors">
+      <http:operation location="/Geterrors" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetADDisplayName_SIPML_nopass">
+      <http:operation location="/GetADDisplayName_SIPML_nopass" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DoNIP">
+      <http:operation location="/DoNIP" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buildstring">
+      <http:operation location="/buildstring" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="logtoken">
+      <http:operation location="/logtoken" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Completeit_">
+      <http:operation location="/Completeit_" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="confirmtokenexempt">
+      <http:operation location="/confirmtokenexempt" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createtoken">
+      <http:operation location="/createtoken" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ENCRY">
+      <http:operation location="/ENCRY" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DECRY">
+      <http:operation location="/DECRY" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getsession">
+      <http:operation location="/getsession" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updatesession">
+      <http:operation location="/updatesession" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="Confirmpenaltybalance">
+      <http:operation location="/Confirmpenaltybalance" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Encryptfx">
+      <http:operation location="/Encryptfx" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Decryptfx">
+      <http:operation location="/Decryptfx" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="Service1HttpPost" type="tns:Service1HttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="formatGSMnum4SMS">
+      <http:operation location="/formatGSMnum4SMS" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateGSMnum">
+      <http:operation location="/ValidateGSMnum" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetADDistributionLIST">
+      <http:operation location="/GetADDistributionLIST" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetADDisplayName_SIAML">
+      <http:operation location="/GetADDisplayName_SIAML" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetADDisplayName_SIAML_nopass">
+      <http:operation location="/GetADDisplayName_SIAML_nopass" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetADDisplayName_SIPML">
+      <http:operation location="/GetADDisplayName_SIPML" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetADDisplayName_SIPML_nopass_email">
+      <http:operation location="/GetADDisplayName_SIPML_nopass_email" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetADDisplayName_SIAML_nopass_email">
+      <http:operation location="/GetADDisplayName_SIAML_nopass_email" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransStatus">
+      <http:operation location="/GetTransStatus" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransDetails">
+      <http:operation location="/GetTransDetails" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Geterrors">
+      <http:operation location="/Geterrors" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetADDisplayName_SIPML_nopass">
+      <http:operation location="/GetADDisplayName_SIPML_nopass" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DoNIP">
+      <http:operation location="/DoNIP" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="buildstring">
+      <http:operation location="/buildstring" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="logtoken">
+      <http:operation location="/logtoken" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Completeit_">
+      <http:operation location="/Completeit_" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="confirmtokenexempt">
+      <http:operation location="/confirmtokenexempt" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createtoken">
+      <http:operation location="/createtoken" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ENCRY">
+      <http:operation location="/ENCRY" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DECRY">
+      <http:operation location="/DECRY" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getsession">
+      <http:operation location="/getsession" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updatesession">
+      <http:operation location="/updatesession" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="Confirmpenaltybalance">
+      <http:operation location="/Confirmpenaltybalance" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Encryptfx">
+      <http:operation location="/Encryptfx" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Decryptfx">
+      <http:operation location="/Decryptfx" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service1">
+    <wsdl:port name="Service1Soap" binding="tns:Service1Soap">
+      <soap:address location="http://10.234.242.11/wealthbox/service1.asmx" />
+    </wsdl:port>
+    <wsdl:port name="Service1Soap12" binding="tns:Service1Soap12">
+      <soap12:address location="http://10.234.242.11/wealthbox/service1.asmx" />
+    </wsdl:port>
+    <wsdl:port name="Service1HttpGet" binding="tns:Service1HttpGet">
+      <http:address location="http://10.234.242.11/wealthbox/service1.asmx" />
+    </wsdl:port>
+    <wsdl:port name="Service1HttpPost" binding="tns:Service1HttpPost">
+      <http:address location="http://10.234.242.11/wealthbox/service1.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

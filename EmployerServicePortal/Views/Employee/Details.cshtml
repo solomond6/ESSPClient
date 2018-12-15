@@ -1,0 +1,159 @@
+﻿
+@{
+    ViewBag.Title = "View";
+}
+@Html.Partial("_SideMenu")
+<div class="m-grid__item m-grid__item--fluid m-wrapper">
+    <div class="m-subheader ">
+        <div class="d-flex align-items-center">
+            <div class="mr-auto">
+                <h3 class="m-subheader__title m-subheader__title--separator">
+                    Employee
+                </h3>
+                <ul class="m-subheader__breadcrumbs m-nav m-nav--inline">
+                    <li class="m-nav__item m-nav__item--home">
+                        <a href="#" class="m-nav__link m-nav__link--icon">
+                            <i class="m-nav__link-icon la la-home"></i>
+                        </a>
+                    </li>
+                    <li class="m-nav__separator">
+                        -
+                    </li>
+                    <li class="m-nav__item">
+                        <a href="" class="m-nav__link">
+                            <span class="m-nav__link-text">
+                                Employee Details
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                
+            </div>
+        </div>
+    </div>
+    <div class="m-content">
+        <div class="m-portlet m-portlet--mobile">
+            <div class="m-portlet__head">
+                <div class="m-portlet__head-caption">
+                    <div class="m-portlet__head-title">
+                        <h3 class="m-portlet__head-text">
+                            Employee Details
+                        </h3>
+                    </div>
+                </div>
+                <div class="m-portlet__head-tools">
+                </div>
+            </div>
+            <div class="m-portlet__body">
+                <div class="m_datatable m-datatable m-datatable--default m-datatable--loaded">
+                    <table id="employer-data-table" class="table table-striped" width="100%">
+                        <tbody>
+                            @{
+                                var details = ViewBag.Details as List<EmployerServicePortal.Models.CompanyEmployee>;
+                                if (details != null)
+                                {
+                                    foreach (var d in details)
+                                    {
+                                        
+                                        <tr>
+                                            <td><label>Statement Delivery Option:</label></td>
+                                            <td colspan="3"></td>
+                                        </tr>
+                                        <tr class="bg-primary">
+                                            <td colspan="4">User Details</td>
+                                        </tr>
+                                        <tr>
+                                            <td><label>Fullname:</label></td>
+                                            <td colspan="3">@d.Title @d.FirstName @d.MiddleName @d.LastName </td>
+                                        </tr>
+                                        <tr>
+                                            <td><label>Email Address:</label></td>
+                                            <td>@d.Email</td>
+                                            <td><label>Mobile Phone:</label></td>
+                                            <td>@d.PhoneNo</td>
+                                        </tr>
+                                        <tr>
+                                            <td><label>Gender:</label></td>
+                                            <td>@d.Sex</td>
+                                            <td><label>Date of Birth:</label></td>
+                                            <td>@d.DateOfBirth</td>
+                                        </tr>
+                                        <tr>
+                                            <td><label>LGA:</label></td>
+                                            <td>@d.LGA</td>
+                                            <td><label>State of Origin:</label></td>
+                                            <td>@d.StateOfOrigin</td>
+                                        </tr>
+                                        <tr>
+                                            <td><label>Correspondence Address 1:</label></td>
+                                            <td>@d.Address</td>
+                                            <td><label>Correspondence Address 2:</label></td>
+                                            <td>@d.Address2</td>
+                                        </tr>
+                                        <tr>
+                                            <td><label>City:</label></td>
+                                            <td>@d.City</td>
+                                            <td><label>State:</label></td>
+                                            <td>@d.State</td>
+                                        </tr>
+                                        <tr>
+                                            <td><label>Religion:</label></td>
+                                            <td>@d.Religion</td>
+                                            <td><label>Nationality:</label></td>
+                                            <td>@d.Nationality</td>
+                                        </tr>
+                                        <tr>
+                                            <td><label>Highest Qualification:</label></td>
+                                            <td colspan="3">@d.Qualification</td>
+                                        </tr>
+                                        <tr class="bg-primary">
+                                            <td colspan="4">Next of Kin Details</td>
+                                        </tr>
+                                        <tr>
+                                            <td><label>Fullname:</label></td>
+                                            <td colspan="3"></td>
+                                        </tr>
+                                        <tr>
+                                            <td><label>Email Address:</label></td>
+                                            <td></td>
+                                            <td><label>Mobile Phone:</label></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td><label>Gender:</label></td>
+                                            <td></td>
+                                            <td><label>Relationship:</label></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td><label>Contact Phone No:</label></td>
+                                            <td></td>
+                                            <td><label>Email Address:</label></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td><label>Correspondence Address:</label></td>
+                                            <td></td>
+                                            <td><label>Correspondence Address 1:</label></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td><label>City:</label></td>
+                                            <td></td>
+                                            <td><label>State:</label></td>
+                                            <td></td>
+                                        </tr>
+                                    }
+                                }
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/bootstrap")

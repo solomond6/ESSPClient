@@ -1,0 +1,1969 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="SendlatestBenefit">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Pin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BrowserUsed" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SrcChannel" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userkey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="uid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendlatestBenefitResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="Lastthreetxn">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Pin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SrcChannel" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userkey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="uid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LastthreetxnResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="ChangePassword">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Pin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BrowserUsed" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="type" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="oldpassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="newpassword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SrcChannel" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userkey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="uid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChangePasswordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ChangePasswordResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PensionElectronicDocs">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Pin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Doctype" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SrcChannel" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userkey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="uid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PensionElectronicDocsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PensionElectronicDocsResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Logestatement">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Pin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Phone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SrcChannel" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userkey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="uid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LogestatementResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LogestatementResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Validatetoken">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Pin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sessionID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="token" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userkey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="uid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidatetokenResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ValidatetokenResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Tokengenerator">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Pin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Dissem" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Application" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Functionality" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userkey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="uid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TokengeneratorResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TokengeneratorResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PensiondocSender_dated">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Pin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Doctype" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SrcChannel" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sdate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="edate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userkey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="uid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PensiondocSender_datedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PensiondocSender_datedResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LogNps">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Q1" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Q2" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Q3" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Q4i" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Q4ii" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Q4iii" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="surveycode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RSAPIN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userkey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="uid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LogNpsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LogNpsResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cleanamter">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ammt" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="cleanamterResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cleanamterResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Fetchdata_addendum">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PIN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sdate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="edate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userkey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="uid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Fetchdata_addendumResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Fetchdata_addendumResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Fetchtxn">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PIN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sdate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="edate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userkey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="uid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FetchtxnResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FetchtxnResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="States">
+        <s:complexType />
+      </s:element>
+      <s:element name="StatesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="StatesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="updatevaluestest">
+        <s:complexType />
+      </s:element>
+      <s:element name="updatevaluestestResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="updatevaluestestResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Lga">
+        <s:complexType />
+      </s:element>
+      <s:element name="LgaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LgaResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Benefit_App_Setup">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userkey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="uid" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="query_type" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="app_id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Benefit_App_SetupResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Benefit_App_SetupResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Benefit_State">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userkey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="uid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Benefit_StateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Benefit_StateResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Benefit_StanbicLocation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userkey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="uid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="state" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Benefit_StanbicLocationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Benefit_StanbicLocationResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Benefit_Application">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userkey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="uid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Benefit_ApplicationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Benefit_ApplicationResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Benefit_AppPrevInstance">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userkey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="uid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pin" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="app_type" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Benefit_AppPrevInstanceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Benefit_AppPrevInstanceResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Benefit_CreateApp">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userkey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="uid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PIN" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="AppType" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ProcessID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Benefit_CreateAppResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Benefit_CreateAppResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Contributions_Within_Period">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PIN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sdate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="edate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userkey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="uid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Contributions_Within_PeriodResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Contributions_Within_PeriodResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FundPrice">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FundID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sdate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="edate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userkey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="uid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FundPriceResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FundPriceResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Contributions_As_At_Period">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PIN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="edate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userkey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="uid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Contributions_As_At_PeriodResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Contributions_As_At_PeriodResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BenefitApp">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PIN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userkey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="uid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BenefitAppResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BenefitAppResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Fetchdata">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PIN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="dtype" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userkey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="uid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FetchdataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FetchdataResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DateTimeConverter">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="date_time" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DateTimeConverterResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DateTimeConverterResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sendtext_pension">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="phone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="msg" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sender" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sendtext_pensionResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="sendtext_pension_new">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="phone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="msg" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sender" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="sendtext_pension_newResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sendtext_pension_newResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateBioData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="col_name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="old_val" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="new_val" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="client_type" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="table_no" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="field_no" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userkey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="uid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="tablename" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateBioDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateBioDataResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsValidcontact">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Pin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="contactype" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SrcChannel" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userkey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="uid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsValidcontactResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IsValidcontactResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ResetPassword">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoginVal" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Logintype" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BrowserUsed" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="srcchannel" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userkey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="uid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ResetPasswordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ResetPasswordResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBanks">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userkey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="uid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBanksResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetBanksResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PensionLogin">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LoginVal" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Logintype" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pword" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BrowserUsed" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SessID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Agent" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Ipaddress" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userkey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="uid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PensionLoginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PensionLoginResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_Session">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Get_SessionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Get_SessionResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FetchPRC">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userkey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="uid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="src" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FetchPRCResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FetchPRCResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Fetchstatement_multiformat_test">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sdate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="edate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userkey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="uid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="src" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fmat" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Fetchstatement_multiformat_testResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Fetchstatement_multiformat_testResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Fetchstatement">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sdate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="edate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userkey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="uid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="src" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FetchstatementResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FetchstatementResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Fetchstatement_multiformat">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sdate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="edate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userkey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="uid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="src" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fmat" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Fetchstatement_multiformatResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Fetchstatement_multiformatResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Fetchstatement_multiformat_fid">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pin" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="sdate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="edate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userkey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="uid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="src" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fmat" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="fid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Fetchstatement_multiformat_fidResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Fetchstatement_multiformat_fidResult" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="SendlatestBenefitSoapIn">
+    <wsdl:part name="parameters" element="tns:SendlatestBenefit" />
+  </wsdl:message>
+  <wsdl:message name="SendlatestBenefitSoapOut">
+    <wsdl:part name="parameters" element="tns:SendlatestBenefitResponse" />
+  </wsdl:message>
+  <wsdl:message name="LastthreetxnSoapIn">
+    <wsdl:part name="parameters" element="tns:Lastthreetxn" />
+  </wsdl:message>
+  <wsdl:message name="LastthreetxnSoapOut">
+    <wsdl:part name="parameters" element="tns:LastthreetxnResponse" />
+  </wsdl:message>
+  <wsdl:message name="ChangePasswordSoapIn">
+    <wsdl:part name="parameters" element="tns:ChangePassword" />
+  </wsdl:message>
+  <wsdl:message name="ChangePasswordSoapOut">
+    <wsdl:part name="parameters" element="tns:ChangePasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="PensionElectronicDocsSoapIn">
+    <wsdl:part name="parameters" element="tns:PensionElectronicDocs" />
+  </wsdl:message>
+  <wsdl:message name="PensionElectronicDocsSoapOut">
+    <wsdl:part name="parameters" element="tns:PensionElectronicDocsResponse" />
+  </wsdl:message>
+  <wsdl:message name="LogestatementSoapIn">
+    <wsdl:part name="parameters" element="tns:Logestatement" />
+  </wsdl:message>
+  <wsdl:message name="LogestatementSoapOut">
+    <wsdl:part name="parameters" element="tns:LogestatementResponse" />
+  </wsdl:message>
+  <wsdl:message name="ValidatetokenSoapIn">
+    <wsdl:part name="parameters" element="tns:Validatetoken" />
+  </wsdl:message>
+  <wsdl:message name="ValidatetokenSoapOut">
+    <wsdl:part name="parameters" element="tns:ValidatetokenResponse" />
+  </wsdl:message>
+  <wsdl:message name="TokengeneratorSoapIn">
+    <wsdl:part name="parameters" element="tns:Tokengenerator" />
+  </wsdl:message>
+  <wsdl:message name="TokengeneratorSoapOut">
+    <wsdl:part name="parameters" element="tns:TokengeneratorResponse" />
+  </wsdl:message>
+  <wsdl:message name="PensiondocSender_datedSoapIn">
+    <wsdl:part name="parameters" element="tns:PensiondocSender_dated" />
+  </wsdl:message>
+  <wsdl:message name="PensiondocSender_datedSoapOut">
+    <wsdl:part name="parameters" element="tns:PensiondocSender_datedResponse" />
+  </wsdl:message>
+  <wsdl:message name="LogNpsSoapIn">
+    <wsdl:part name="parameters" element="tns:LogNps" />
+  </wsdl:message>
+  <wsdl:message name="LogNpsSoapOut">
+    <wsdl:part name="parameters" element="tns:LogNpsResponse" />
+  </wsdl:message>
+  <wsdl:message name="cleanamterSoapIn">
+    <wsdl:part name="parameters" element="tns:cleanamter" />
+  </wsdl:message>
+  <wsdl:message name="cleanamterSoapOut">
+    <wsdl:part name="parameters" element="tns:cleanamterResponse" />
+  </wsdl:message>
+  <wsdl:message name="Fetchdata_addendumSoapIn">
+    <wsdl:part name="parameters" element="tns:Fetchdata_addendum" />
+  </wsdl:message>
+  <wsdl:message name="Fetchdata_addendumSoapOut">
+    <wsdl:part name="parameters" element="tns:Fetchdata_addendumResponse" />
+  </wsdl:message>
+  <wsdl:message name="FetchtxnSoapIn">
+    <wsdl:part name="parameters" element="tns:Fetchtxn" />
+  </wsdl:message>
+  <wsdl:message name="FetchtxnSoapOut">
+    <wsdl:part name="parameters" element="tns:FetchtxnResponse" />
+  </wsdl:message>
+  <wsdl:message name="StatesSoapIn">
+    <wsdl:part name="parameters" element="tns:States" />
+  </wsdl:message>
+  <wsdl:message name="StatesSoapOut">
+    <wsdl:part name="parameters" element="tns:StatesResponse" />
+  </wsdl:message>
+  <wsdl:message name="updatevaluestestSoapIn">
+    <wsdl:part name="parameters" element="tns:updatevaluestest" />
+  </wsdl:message>
+  <wsdl:message name="updatevaluestestSoapOut">
+    <wsdl:part name="parameters" element="tns:updatevaluestestResponse" />
+  </wsdl:message>
+  <wsdl:message name="LgaSoapIn">
+    <wsdl:part name="parameters" element="tns:Lga" />
+  </wsdl:message>
+  <wsdl:message name="LgaSoapOut">
+    <wsdl:part name="parameters" element="tns:LgaResponse" />
+  </wsdl:message>
+  <wsdl:message name="Benefit_App_SetupSoapIn">
+    <wsdl:part name="parameters" element="tns:Benefit_App_Setup" />
+  </wsdl:message>
+  <wsdl:message name="Benefit_App_SetupSoapOut">
+    <wsdl:part name="parameters" element="tns:Benefit_App_SetupResponse" />
+  </wsdl:message>
+  <wsdl:message name="Benefit_StateSoapIn">
+    <wsdl:part name="parameters" element="tns:Benefit_State" />
+  </wsdl:message>
+  <wsdl:message name="Benefit_StateSoapOut">
+    <wsdl:part name="parameters" element="tns:Benefit_StateResponse" />
+  </wsdl:message>
+  <wsdl:message name="Benefit_StanbicLocationSoapIn">
+    <wsdl:part name="parameters" element="tns:Benefit_StanbicLocation" />
+  </wsdl:message>
+  <wsdl:message name="Benefit_StanbicLocationSoapOut">
+    <wsdl:part name="parameters" element="tns:Benefit_StanbicLocationResponse" />
+  </wsdl:message>
+  <wsdl:message name="Benefit_ApplicationSoapIn">
+    <wsdl:part name="parameters" element="tns:Benefit_Application" />
+  </wsdl:message>
+  <wsdl:message name="Benefit_ApplicationSoapOut">
+    <wsdl:part name="parameters" element="tns:Benefit_ApplicationResponse" />
+  </wsdl:message>
+  <wsdl:message name="Benefit_AppPrevInstanceSoapIn">
+    <wsdl:part name="parameters" element="tns:Benefit_AppPrevInstance" />
+  </wsdl:message>
+  <wsdl:message name="Benefit_AppPrevInstanceSoapOut">
+    <wsdl:part name="parameters" element="tns:Benefit_AppPrevInstanceResponse" />
+  </wsdl:message>
+  <wsdl:message name="Benefit_CreateAppSoapIn">
+    <wsdl:part name="parameters" element="tns:Benefit_CreateApp" />
+  </wsdl:message>
+  <wsdl:message name="Benefit_CreateAppSoapOut">
+    <wsdl:part name="parameters" element="tns:Benefit_CreateAppResponse" />
+  </wsdl:message>
+  <wsdl:message name="Contributions_Within_PeriodSoapIn">
+    <wsdl:part name="parameters" element="tns:Contributions_Within_Period" />
+  </wsdl:message>
+  <wsdl:message name="Contributions_Within_PeriodSoapOut">
+    <wsdl:part name="parameters" element="tns:Contributions_Within_PeriodResponse" />
+  </wsdl:message>
+  <wsdl:message name="FundPriceSoapIn">
+    <wsdl:part name="parameters" element="tns:FundPrice" />
+  </wsdl:message>
+  <wsdl:message name="FundPriceSoapOut">
+    <wsdl:part name="parameters" element="tns:FundPriceResponse" />
+  </wsdl:message>
+  <wsdl:message name="Contributions_As_At_PeriodSoapIn">
+    <wsdl:part name="parameters" element="tns:Contributions_As_At_Period" />
+  </wsdl:message>
+  <wsdl:message name="Contributions_As_At_PeriodSoapOut">
+    <wsdl:part name="parameters" element="tns:Contributions_As_At_PeriodResponse" />
+  </wsdl:message>
+  <wsdl:message name="BenefitAppSoapIn">
+    <wsdl:part name="parameters" element="tns:BenefitApp" />
+  </wsdl:message>
+  <wsdl:message name="BenefitAppSoapOut">
+    <wsdl:part name="parameters" element="tns:BenefitAppResponse" />
+  </wsdl:message>
+  <wsdl:message name="FetchdataSoapIn">
+    <wsdl:part name="parameters" element="tns:Fetchdata" />
+  </wsdl:message>
+  <wsdl:message name="FetchdataSoapOut">
+    <wsdl:part name="parameters" element="tns:FetchdataResponse" />
+  </wsdl:message>
+  <wsdl:message name="DateTimeConverterSoapIn">
+    <wsdl:part name="parameters" element="tns:DateTimeConverter" />
+  </wsdl:message>
+  <wsdl:message name="DateTimeConverterSoapOut">
+    <wsdl:part name="parameters" element="tns:DateTimeConverterResponse" />
+  </wsdl:message>
+  <wsdl:message name="sendtext_pensionSoapIn">
+    <wsdl:part name="parameters" element="tns:sendtext_pension" />
+  </wsdl:message>
+  <wsdl:message name="sendtext_pensionSoapOut">
+    <wsdl:part name="parameters" element="tns:sendtext_pensionResponse" />
+  </wsdl:message>
+  <wsdl:message name="sendtext_pension_newSoapIn">
+    <wsdl:part name="parameters" element="tns:sendtext_pension_new" />
+  </wsdl:message>
+  <wsdl:message name="sendtext_pension_newSoapOut">
+    <wsdl:part name="parameters" element="tns:sendtext_pension_newResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateBioDataSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateBioData" />
+  </wsdl:message>
+  <wsdl:message name="UpdateBioDataSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateBioDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsValidcontactSoapIn">
+    <wsdl:part name="parameters" element="tns:IsValidcontact" />
+  </wsdl:message>
+  <wsdl:message name="IsValidcontactSoapOut">
+    <wsdl:part name="parameters" element="tns:IsValidcontactResponse" />
+  </wsdl:message>
+  <wsdl:message name="ResetPasswordSoapIn">
+    <wsdl:part name="parameters" element="tns:ResetPassword" />
+  </wsdl:message>
+  <wsdl:message name="ResetPasswordSoapOut">
+    <wsdl:part name="parameters" element="tns:ResetPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBanksSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBanks" />
+  </wsdl:message>
+  <wsdl:message name="GetBanksSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBanksResponse" />
+  </wsdl:message>
+  <wsdl:message name="PensionLoginSoapIn">
+    <wsdl:part name="parameters" element="tns:PensionLogin" />
+  </wsdl:message>
+  <wsdl:message name="PensionLoginSoapOut">
+    <wsdl:part name="parameters" element="tns:PensionLoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="Get_SessionSoapIn">
+    <wsdl:part name="parameters" element="tns:Get_Session" />
+  </wsdl:message>
+  <wsdl:message name="Get_SessionSoapOut">
+    <wsdl:part name="parameters" element="tns:Get_SessionResponse" />
+  </wsdl:message>
+  <wsdl:message name="FetchPRCSoapIn">
+    <wsdl:part name="parameters" element="tns:FetchPRC" />
+  </wsdl:message>
+  <wsdl:message name="FetchPRCSoapOut">
+    <wsdl:part name="parameters" element="tns:FetchPRCResponse" />
+  </wsdl:message>
+  <wsdl:message name="Fetchstatement_multiformat_testSoapIn">
+    <wsdl:part name="parameters" element="tns:Fetchstatement_multiformat_test" />
+  </wsdl:message>
+  <wsdl:message name="Fetchstatement_multiformat_testSoapOut">
+    <wsdl:part name="parameters" element="tns:Fetchstatement_multiformat_testResponse" />
+  </wsdl:message>
+  <wsdl:message name="FetchstatementSoapIn">
+    <wsdl:part name="parameters" element="tns:Fetchstatement" />
+  </wsdl:message>
+  <wsdl:message name="FetchstatementSoapOut">
+    <wsdl:part name="parameters" element="tns:FetchstatementResponse" />
+  </wsdl:message>
+  <wsdl:message name="Fetchstatement_multiformatSoapIn">
+    <wsdl:part name="parameters" element="tns:Fetchstatement_multiformat" />
+  </wsdl:message>
+  <wsdl:message name="Fetchstatement_multiformatSoapOut">
+    <wsdl:part name="parameters" element="tns:Fetchstatement_multiformatResponse" />
+  </wsdl:message>
+  <wsdl:message name="Fetchstatement_multiformat_fidSoapIn">
+    <wsdl:part name="parameters" element="tns:Fetchstatement_multiformat_fid" />
+  </wsdl:message>
+  <wsdl:message name="Fetchstatement_multiformat_fidSoapOut">
+    <wsdl:part name="parameters" element="tns:Fetchstatement_multiformat_fidResponse" />
+  </wsdl:message>
+  <wsdl:portType name="UtilSoap">
+    <wsdl:operation name="SendlatestBenefit">
+      <wsdl:input message="tns:SendlatestBenefitSoapIn" />
+      <wsdl:output message="tns:SendlatestBenefitSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Lastthreetxn">
+      <wsdl:input message="tns:LastthreetxnSoapIn" />
+      <wsdl:output message="tns:LastthreetxnSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangePassword">
+      <wsdl:input message="tns:ChangePasswordSoapIn" />
+      <wsdl:output message="tns:ChangePasswordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PensionElectronicDocs">
+      <wsdl:input message="tns:PensionElectronicDocsSoapIn" />
+      <wsdl:output message="tns:PensionElectronicDocsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Logestatement">
+      <wsdl:input message="tns:LogestatementSoapIn" />
+      <wsdl:output message="tns:LogestatementSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Validatetoken">
+      <wsdl:input message="tns:ValidatetokenSoapIn" />
+      <wsdl:output message="tns:ValidatetokenSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Tokengenerator">
+      <wsdl:input message="tns:TokengeneratorSoapIn" />
+      <wsdl:output message="tns:TokengeneratorSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PensiondocSender_dated">
+      <wsdl:input message="tns:PensiondocSender_datedSoapIn" />
+      <wsdl:output message="tns:PensiondocSender_datedSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LogNps">
+      <wsdl:input message="tns:LogNpsSoapIn" />
+      <wsdl:output message="tns:LogNpsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="cleanamter">
+      <wsdl:input message="tns:cleanamterSoapIn" />
+      <wsdl:output message="tns:cleanamterSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Fetchdata_addendum">
+      <wsdl:input message="tns:Fetchdata_addendumSoapIn" />
+      <wsdl:output message="tns:Fetchdata_addendumSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Fetchtxn">
+      <wsdl:input message="tns:FetchtxnSoapIn" />
+      <wsdl:output message="tns:FetchtxnSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="States">
+      <wsdl:input message="tns:StatesSoapIn" />
+      <wsdl:output message="tns:StatesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="updatevaluestest">
+      <wsdl:input message="tns:updatevaluestestSoapIn" />
+      <wsdl:output message="tns:updatevaluestestSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Lga">
+      <wsdl:input message="tns:LgaSoapIn" />
+      <wsdl:output message="tns:LgaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Benefit_App_Setup">
+      <wsdl:input message="tns:Benefit_App_SetupSoapIn" />
+      <wsdl:output message="tns:Benefit_App_SetupSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Benefit_State">
+      <wsdl:input message="tns:Benefit_StateSoapIn" />
+      <wsdl:output message="tns:Benefit_StateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Benefit_StanbicLocation">
+      <wsdl:input message="tns:Benefit_StanbicLocationSoapIn" />
+      <wsdl:output message="tns:Benefit_StanbicLocationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Benefit_Application">
+      <wsdl:input message="tns:Benefit_ApplicationSoapIn" />
+      <wsdl:output message="tns:Benefit_ApplicationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Benefit_AppPrevInstance">
+      <wsdl:input message="tns:Benefit_AppPrevInstanceSoapIn" />
+      <wsdl:output message="tns:Benefit_AppPrevInstanceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Benefit_CreateApp">
+      <wsdl:input message="tns:Benefit_CreateAppSoapIn" />
+      <wsdl:output message="tns:Benefit_CreateAppSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Contributions_Within_Period">
+      <wsdl:input message="tns:Contributions_Within_PeriodSoapIn" />
+      <wsdl:output message="tns:Contributions_Within_PeriodSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FundPrice">
+      <wsdl:input message="tns:FundPriceSoapIn" />
+      <wsdl:output message="tns:FundPriceSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Contributions_As_At_Period">
+      <wsdl:input message="tns:Contributions_As_At_PeriodSoapIn" />
+      <wsdl:output message="tns:Contributions_As_At_PeriodSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BenefitApp">
+      <wsdl:input message="tns:BenefitAppSoapIn" />
+      <wsdl:output message="tns:BenefitAppSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Fetchdata">
+      <wsdl:input message="tns:FetchdataSoapIn" />
+      <wsdl:output message="tns:FetchdataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DateTimeConverter">
+      <wsdl:input message="tns:DateTimeConverterSoapIn" />
+      <wsdl:output message="tns:DateTimeConverterSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="sendtext_pension">
+      <wsdl:input message="tns:sendtext_pensionSoapIn" />
+      <wsdl:output message="tns:sendtext_pensionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="sendtext_pension_new">
+      <wsdl:input message="tns:sendtext_pension_newSoapIn" />
+      <wsdl:output message="tns:sendtext_pension_newSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBioData">
+      <wsdl:input message="tns:UpdateBioDataSoapIn" />
+      <wsdl:output message="tns:UpdateBioDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsValidcontact">
+      <wsdl:input message="tns:IsValidcontactSoapIn" />
+      <wsdl:output message="tns:IsValidcontactSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ResetPassword">
+      <wsdl:input message="tns:ResetPasswordSoapIn" />
+      <wsdl:output message="tns:ResetPasswordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBanks">
+      <wsdl:input message="tns:GetBanksSoapIn" />
+      <wsdl:output message="tns:GetBanksSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PensionLogin">
+      <wsdl:input message="tns:PensionLoginSoapIn" />
+      <wsdl:output message="tns:PensionLoginSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_Session">
+      <wsdl:input message="tns:Get_SessionSoapIn" />
+      <wsdl:output message="tns:Get_SessionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FetchPRC">
+      <wsdl:input message="tns:FetchPRCSoapIn" />
+      <wsdl:output message="tns:FetchPRCSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Fetchstatement_multiformat_test">
+      <wsdl:input message="tns:Fetchstatement_multiformat_testSoapIn" />
+      <wsdl:output message="tns:Fetchstatement_multiformat_testSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Fetchstatement">
+      <wsdl:input message="tns:FetchstatementSoapIn" />
+      <wsdl:output message="tns:FetchstatementSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Fetchstatement_multiformat">
+      <wsdl:input message="tns:Fetchstatement_multiformatSoapIn" />
+      <wsdl:output message="tns:Fetchstatement_multiformatSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Fetchstatement_multiformat_fid">
+      <wsdl:input message="tns:Fetchstatement_multiformat_fidSoapIn" />
+      <wsdl:output message="tns:Fetchstatement_multiformat_fidSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="UtilSoap" type="tns:UtilSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SendlatestBenefit">
+      <soap:operation soapAction="http://tempuri.org/SendlatestBenefit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Lastthreetxn">
+      <soap:operation soapAction="http://tempuri.org/Lastthreetxn" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangePassword">
+      <soap:operation soapAction="http://tempuri.org/ChangePassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PensionElectronicDocs">
+      <soap:operation soapAction="http://tempuri.org/PensionElectronicDocs" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Logestatement">
+      <soap:operation soapAction="http://tempuri.org/Logestatement" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Validatetoken">
+      <soap:operation soapAction="http://tempuri.org/Validatetoken" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Tokengenerator">
+      <soap:operation soapAction="http://tempuri.org/Tokengenerator" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PensiondocSender_dated">
+      <soap:operation soapAction="http://tempuri.org/PensiondocSender_dated" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogNps">
+      <soap:operation soapAction="http://tempuri.org/LogNps" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cleanamter">
+      <soap:operation soapAction="http://tempuri.org/cleanamter" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Fetchdata_addendum">
+      <soap:operation soapAction="http://tempuri.org/Fetchdata_addendum" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Fetchtxn">
+      <soap:operation soapAction="http://tempuri.org/Fetchtxn" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="States">
+      <soap:operation soapAction="http://tempuri.org/States" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updatevaluestest">
+      <soap:operation soapAction="http://tempuri.org/updatevaluestest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Lga">
+      <soap:operation soapAction="http://tempuri.org/Lga" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Benefit_App_Setup">
+      <soap:operation soapAction="http://tempuri.org/Benefit_App_Setup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Benefit_State">
+      <soap:operation soapAction="http://tempuri.org/Benefit_State" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Benefit_StanbicLocation">
+      <soap:operation soapAction="http://tempuri.org/Benefit_StanbicLocation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Benefit_Application">
+      <soap:operation soapAction="http://tempuri.org/Benefit_Application" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Benefit_AppPrevInstance">
+      <soap:operation soapAction="http://tempuri.org/Benefit_AppPrevInstance" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Benefit_CreateApp">
+      <soap:operation soapAction="http://tempuri.org/Benefit_CreateApp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Contributions_Within_Period">
+      <soap:operation soapAction="http://tempuri.org/Contributions_Within_Period" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FundPrice">
+      <soap:operation soapAction="http://tempuri.org/FundPrice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Contributions_As_At_Period">
+      <soap:operation soapAction="http://tempuri.org/Contributions_As_At_Period" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BenefitApp">
+      <soap:operation soapAction="http://tempuri.org/BenefitApp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Fetchdata">
+      <soap:operation soapAction="http://tempuri.org/Fetchdata" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DateTimeConverter">
+      <soap:operation soapAction="http://tempuri.org/DateTimeConverter" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendtext_pension">
+      <soap:operation soapAction="http://tempuri.org/sendtext_pension" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendtext_pension_new">
+      <soap:operation soapAction="http://tempuri.org/sendtext_pension_new" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBioData">
+      <soap:operation soapAction="http://tempuri.org/UpdateBioData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsValidcontact">
+      <soap:operation soapAction="http://tempuri.org/IsValidcontact" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResetPassword">
+      <soap:operation soapAction="http://tempuri.org/ResetPassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBanks">
+      <soap:operation soapAction="http://tempuri.org/GetBanks" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PensionLogin">
+      <soap:operation soapAction="http://tempuri.org/PensionLogin" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Session">
+      <soap:operation soapAction="http://tempuri.org/Get_Session" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FetchPRC">
+      <soap:operation soapAction="http://tempuri.org/FetchPRC" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Fetchstatement_multiformat_test">
+      <soap:operation soapAction="http://tempuri.org/Fetchstatement_multiformat_test" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Fetchstatement">
+      <soap:operation soapAction="http://tempuri.org/Fetchstatement" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Fetchstatement_multiformat">
+      <soap:operation soapAction="http://tempuri.org/Fetchstatement_multiformat" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Fetchstatement_multiformat_fid">
+      <soap:operation soapAction="http://tempuri.org/Fetchstatement_multiformat_fid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="UtilSoap12" type="tns:UtilSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SendlatestBenefit">
+      <soap12:operation soapAction="http://tempuri.org/SendlatestBenefit" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Lastthreetxn">
+      <soap12:operation soapAction="http://tempuri.org/Lastthreetxn" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangePassword">
+      <soap12:operation soapAction="http://tempuri.org/ChangePassword" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PensionElectronicDocs">
+      <soap12:operation soapAction="http://tempuri.org/PensionElectronicDocs" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Logestatement">
+      <soap12:operation soapAction="http://tempuri.org/Logestatement" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Validatetoken">
+      <soap12:operation soapAction="http://tempuri.org/Validatetoken" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Tokengenerator">
+      <soap12:operation soapAction="http://tempuri.org/Tokengenerator" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PensiondocSender_dated">
+      <soap12:operation soapAction="http://tempuri.org/PensiondocSender_dated" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogNps">
+      <soap12:operation soapAction="http://tempuri.org/LogNps" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cleanamter">
+      <soap12:operation soapAction="http://tempuri.org/cleanamter" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Fetchdata_addendum">
+      <soap12:operation soapAction="http://tempuri.org/Fetchdata_addendum" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Fetchtxn">
+      <soap12:operation soapAction="http://tempuri.org/Fetchtxn" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="States">
+      <soap12:operation soapAction="http://tempuri.org/States" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updatevaluestest">
+      <soap12:operation soapAction="http://tempuri.org/updatevaluestest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Lga">
+      <soap12:operation soapAction="http://tempuri.org/Lga" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Benefit_App_Setup">
+      <soap12:operation soapAction="http://tempuri.org/Benefit_App_Setup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Benefit_State">
+      <soap12:operation soapAction="http://tempuri.org/Benefit_State" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Benefit_StanbicLocation">
+      <soap12:operation soapAction="http://tempuri.org/Benefit_StanbicLocation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Benefit_Application">
+      <soap12:operation soapAction="http://tempuri.org/Benefit_Application" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Benefit_AppPrevInstance">
+      <soap12:operation soapAction="http://tempuri.org/Benefit_AppPrevInstance" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Benefit_CreateApp">
+      <soap12:operation soapAction="http://tempuri.org/Benefit_CreateApp" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Contributions_Within_Period">
+      <soap12:operation soapAction="http://tempuri.org/Contributions_Within_Period" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FundPrice">
+      <soap12:operation soapAction="http://tempuri.org/FundPrice" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Contributions_As_At_Period">
+      <soap12:operation soapAction="http://tempuri.org/Contributions_As_At_Period" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BenefitApp">
+      <soap12:operation soapAction="http://tempuri.org/BenefitApp" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Fetchdata">
+      <soap12:operation soapAction="http://tempuri.org/Fetchdata" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DateTimeConverter">
+      <soap12:operation soapAction="http://tempuri.org/DateTimeConverter" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendtext_pension">
+      <soap12:operation soapAction="http://tempuri.org/sendtext_pension" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendtext_pension_new">
+      <soap12:operation soapAction="http://tempuri.org/sendtext_pension_new" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateBioData">
+      <soap12:operation soapAction="http://tempuri.org/UpdateBioData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsValidcontact">
+      <soap12:operation soapAction="http://tempuri.org/IsValidcontact" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ResetPassword">
+      <soap12:operation soapAction="http://tempuri.org/ResetPassword" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBanks">
+      <soap12:operation soapAction="http://tempuri.org/GetBanks" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PensionLogin">
+      <soap12:operation soapAction="http://tempuri.org/PensionLogin" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Session">
+      <soap12:operation soapAction="http://tempuri.org/Get_Session" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FetchPRC">
+      <soap12:operation soapAction="http://tempuri.org/FetchPRC" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Fetchstatement_multiformat_test">
+      <soap12:operation soapAction="http://tempuri.org/Fetchstatement_multiformat_test" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Fetchstatement">
+      <soap12:operation soapAction="http://tempuri.org/Fetchstatement" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Fetchstatement_multiformat">
+      <soap12:operation soapAction="http://tempuri.org/Fetchstatement_multiformat" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Fetchstatement_multiformat_fid">
+      <soap12:operation soapAction="http://tempuri.org/Fetchstatement_multiformat_fid" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Util">
+    <wsdl:port name="UtilSoap" binding="tns:UtilSoap">
+      <soap:address location="http://10.234.148.145/Wealthbox/SIPML/Util.asmx" />
+    </wsdl:port>
+    <wsdl:port name="UtilSoap12" binding="tns:UtilSoap12">
+      <soap12:address location="http://10.234.148.145/Wealthbox/SIPML/Util.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

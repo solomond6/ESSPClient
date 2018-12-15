@@ -1,0 +1,235 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+@Html.Partial("_SideMenu")
+<div class="m-grid__item m-grid__item--fluid m-wrapper">
+    <div class="m-subheader ">
+        <div class="d-flex align-items-center">
+            <div class="mr-auto">
+                <h3 class="m-subheader__title m-subheader__title--separator">
+                    Reports
+                </h3>
+                <ul class="m-subheader__breadcrumbs m-nav m-nav--inline">
+                    <li class="m-nav__item m-nav__item--home">
+                        <a href="#" class="m-nav__link m-nav__link--icon">
+                            <i class="m-nav__link-icon la la-home"></i>
+                        </a>
+                    </li>
+                    <li class="m-nav__separator">
+                        -
+                    </li>
+                    <li class="m-nav__item">
+                        <a href="" class="m-nav__link">
+                            <span class="m-nav__link-text">
+                                Reports And Download
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div>
+
+            </div>
+        </div>
+    </div>
+    <div class="m-content">
+        <div class="row">
+            <div class="col-lg-8">
+                <!--begin::Portlet-->
+                <div class="m-portlet">
+                    <div class="m-portlet__head">
+                        <div class="m-portlet__head-caption">
+                            <div class="m-portlet__head-title">
+                                <span class="m-portlet__head-icon m--hide">
+                                    <i class="la la-gear"></i>
+                                </span>
+                                <h3 class="m-portlet__head-text">
+                                    Reports And Download
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                    <form class="m-form" method="post" action="@Url.Action("Index", "Reports")" enctype="multipart/form-data">
+                        <div class="m-portlet__body">
+                            @if (TempData["error"] != null)
+                            {
+                                <alert class="alert alert-danger">@TempData["error"]</alert>
+                            }
+                            @if (TempData["msg"] != null)
+                            {
+                                <alert class="alert alert-success">@TempData["msg"]</alert>
+                            }
+                            <div id="schedule-ALert"></div>
+                            <div class="m-form__section m-form__section--first">
+                                <div class="form-group m-form__group row">
+                                    <label class="col-lg-3 col-form-label">Select A Report:</label>
+                                    <div class="col-lg-9">
+                                        <select class="form-control m-input reportType" name="ReportType" required>
+                                            <option value="">Select A Report</option>
+                                            <option value="1">Client Familiarity Index Compliance Report</option>
+                                            <option value="2">PenCom Employer Code (Templated)</option>
+                                            <option value="3">RSA Holders And PIN</option>
+                                            <option value="4">List of Accounts Not Credited.(Unfunded PINs)</option>
+                                            <option value="5">List of Invalid PINs</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group m-form__group row format1">
+                                    <label class="col-lg-3 col-form-label">Select A Format:</label>
+                                    <div class="col-lg-9">
+                                        <select class="form-control m-input reportFormat" name="ReportFormat" id="format1">
+                                            <option value="">Select A Format</option>
+                                            <option value="CSV">CSV</option>
+                                            <option value="PDF">PDF</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group m-form__group row format2">
+                                    <label class="col-lg-3 col-form-label">Select A Format:</label>
+                                    <div class="col-lg-9">
+                                        <select class="form-control m-input reportFormat" name="ReportFormat" id="format2">
+                                            <option value="">Select A Format</option>
+                                            <option value="PDF">PDF</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="date-div">
+                                    <hr />
+                                    <div class="form-group m-form__group row">
+                                        <label class="col-lg-3 col-form-label">
+                                            Start Date:
+                                        </label>
+                                        <div class="col-lg-9">
+                                            <div class="input-group date startdate" data-link-field="dtp_input1">
+                                                <input name="startdate" class="form-control" id="startField" size="16" type="text" readonly="readonly"/>
+                                                <span class="input-group-append input-group-addon"><span class="input-group-text glyphicon glyphicon-remove"><i class="fa fa-remove"></i></span></span>
+                                                <span class="input-group-append input-group-addon"><span class="input-group-text glyphicon glyphicon-th"><i class="fa fa-calendar"></i></span></span>
+                                            </div>
+                                            <input type="hidden" id="dtp_input1" value="" />
+                                        </div>
+                                    </div>
+                                    <div class="form-group m-form__group row">
+                                        <label class="col-lg-3 col-form-label">
+                                            End Date:
+                                        </label>
+                                        <div class="col-lg-9">
+                                            <div class="input-group date enddate" data-link-field="dtp_input1">
+                                                <input name="enddate" class="form-control" id="endField" size="16" type="text" readonly="readonly" />
+                                                <span class="input-group-append input-group-addon"><span class="input-group-text glyphicon glyphicon-remove"><i class="fa fa-remove"></i></span></span>
+                                                <span class="input-group-append input-group-addon"><span class="input-group-text glyphicon glyphicon-th"><i class="fa fa-calendar"></i></span></span>
+                                            </div>
+                                            <input type="hidden" id="dtp_input1" value="" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="m-portlet__foot m-portlet__foot--fit">
+                            <div class="m-form__actions m-form__actions">
+                                <div class="row">
+                                    <div class="col-lg-3"></div>
+                                    <div class="col-lg-9">
+                                        <button type="submit" class="btn btn-success btnInport">Submit</button>
+                                        <button type="reset" class="btn btn-secondary">Cancel</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <!--end::Portlet-->
+            </div>
+        </div>
+        <div class="row">
+            @ViewBag.dat
+        </div>
+    </div>
+</div>
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/bootstrap")
+<script src="~/Scripts/jquery.cookie.js"></script>
+<script>
+    $('.date-div').hide();
+    $('.format1').show();
+    $('.format2').hide();
+    $("#startField").attr("required", false);
+    $("#endField").attr("required", false);
+    $("#format1").attr("required", true);
+    $("#format2").attr("required", false);
+    $(document).on('change', ".reportType", function(){
+        var type = $(".reportType").val();
+        if(type == "4"){
+            $('.date-div').show();
+            $("#startField").attr("required", true);
+            $("#endField").attr("required", true);
+            $('.format1').show();
+            $('.format2').hide();
+            $("#format1").attr("required", true);
+            $("#format2").attr("required", false);
+        }else if(type == "2"){
+            $('.date-div').hide();
+            $("#startField").attr("required", false);
+            $("#endField").attr("required", false);
+            $('.format1').hide();
+            $('.format2').show();
+            $("#format1").attr("required", false);
+            $("#format2").attr("required", true);
+        }
+        else{
+            $('.date-div').hide();
+            $("#startField").attr("required", false);
+            $("#endField").attr("required", false);
+            $('.format1').show();
+            $('.format2').hide();
+            $("#format1").attr("required", true);
+            $("#format2").attr("required", false);
+        }
+    });
+
+    $('.startdate').datepicker({
+        orientation: "bottom left",
+        autoclose: 1,
+        use24hours: false,
+        format: 'dd-M-yyyy'
+    });
+
+    $('.enddate').datepicker({
+        orientation: "bottom left",
+        autoclose: 1,
+        use24hours: false,
+        format: 'dd-M-yyyy'
+    });
+
+    $(document).ready(function () {
+        $('.m-form').submit(function () {
+            $("#schedule-ALert").html('');
+            blockUIForDownload();
+        });
+    });
+
+    var fileDownloadCheckTimer;
+    function blockUIForDownload() {
+        var token = new Date().getTime(); //use the current timestamp as the token value
+        $('#download_token_value_id').val(token);
+        //$.blockUI();
+        fileDownloadCheckTimer = window.setInterval(function () {
+            var cookieValue = $.cookie('fileDownloadToken');
+            if (cookieValue == "Report")
+            $("#schedule-ALert").html('<alert class="alert alert-success">Report Generated Successfully, kindly check the file downloaded</alert>');
+            finishDownload();
+        }, 2000);
+    }
+
+    function finishDownload() {
+        window.clearInterval(fileDownloadCheckTimer);
+        $.removeCookie('fileDownloadToken'); //clears this cookie value
+        //$.unblockUI();
+    }
+</script>
+
+
+
+
+

@@ -1,0 +1,194 @@
+﻿<div class="m-grid__item m-grid__item--fluid m-wrapper">
+    <div class="m-subheader ">
+        <div class="d-flex align-items-center">
+            <div class="mr-auto">
+                <h3 class="m-subheader__title m-subheader__title--separator">
+                    Dashboard
+                </h3>
+            </div>
+            <div>
+                
+            </div>
+        </div>
+    </div>
+    <div class="m-content">
+        <div class="m-portlet">
+            <div class="m-portlet__body  m-portlet__body--no-padding">
+                <div class="row m-row--no-padding m-row--col-separator-xl">
+                    <div class="col-xl-4">
+                        <!--begin:: Widgets/Daily Sales-->
+                        <div class="m-widget14">
+                            <div class="m-widget14__header m--margin-bottom-30">
+                                <h3 class="m-widget14__title">
+                                    Employee Count
+                                </h3>
+                                <span class="m-widget14__desc">
+                                    Total Count Of Employee Registered
+                                </span>
+                            </div>
+                            <div class="m-widget14__chart" style="height:120px;">
+                                <div class="loading"><img src="~/img/spinner.gif" width="40" /></div>
+                                <span class="m-widget25__price m--font-brand"></span>
+                            </div>
+                        </div>
+                        <!--end:: Widgets/Daily Sales-->
+                    </div>
+                    <div class="col-xl-4">
+                        <!--begin:: Widgets/Profit Share-->
+                        <div class="m-widget14">
+                            <div class="m-widget14__header">
+                                <h3 class="m-widget14__title">
+                                    Client Familiarity Index
+                                </h3>
+                                <span class="m-widget14__desc">
+                                    Employee CFI Status
+                                </span>
+                            </div>
+                            <div class="row  align-items-center">
+                                <div class="loading1"><img src="~/img/spinner.gif" width="40" /></div>
+                                <div id="Sample_chart_div" class="chart"></div>
+                            </div>
+                        </div>
+                        <!--end:: Widgets/Profit Share-->
+                    </div>
+                    <div class="col-xl-4">
+                        <!--begin:: Widgets/Profit Share-->
+                        <div class="m-widget14">
+                            <div class="m-widget14__header">
+                                <h3 class="m-widget14__title">
+                                    Statement Option
+                                </h3>
+                                <span class="m-widget14__desc">
+                                    Employee Statement Option
+                                </span>
+                            </div>
+                            <div class="row  align-items-center">
+                                <div class="loading2"><img src="~/img/spinner.gif" width="40" /></div>
+                                <div id="Sample_chart_div1" class="chart"></div>
+                            </div>
+                        </div>
+                        <!--end:: Widgets/Profit Share-->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--<div class="m-portlet">
+            <div class="m-portlet__body  m-portlet__body--no-padding">
+                <div class="row m-row--no-padding m-row--col-separator-xl">
+                    <div class="col-xl-4">
+                        <div class="row m-row--full-height">
+                            <div class="col-sm-12 col-md-12 col-lg-12">
+                                <div class="m-portlet m-portlet--half-height m-portlet--border-bottom-brand ">
+                                    <div class="m-portlet__body">
+                                        <div class="m-widget26">
+                                            <div id="Sample_chart_div"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="m--space-30"></div>
+                                <div class="m-portlet m-portlet--half-height m-portlet--border-bottom-danger ">
+                                    <div class="m-portlet__body">
+                                        <div class="m-widget26">
+                                            <div id="Sample_chart_div1"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-8">
+                        <div class="m-widget14">
+                            <div class="m-widget14__header">
+                                <h3 class="m-widget14__title">
+                                    State
+                                </h3>
+                                <span class="m-widget14__desc">
+                                    Count of Employee State of origin
+                                </span>
+                            </div>
+                            <div class="row  align-items-center">
+                                <div id="Sample_chart_div2"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>-->
+    </div>
+</div>
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/bootstrap")
+<script src="~/Scripts/charts.loader.js"></script>
+<script type="text/javascript">
+
+    google.charts.load('visualization', {'packages':['corechart']});
+
+    $.ajax({
+      type: 'POST',
+      dataType: 'json',
+      contentType: 'application/json',
+      url: "@Url.Action("GetEmployerData", "Home")",
+      data: '{}',
+      success: function (response)
+      {
+            $('.loading').hide();
+            $('.loading1').hide();
+            $('.loading2').hide();
+            $('.m--font-brand').html(response.employeeCount);
+            console.log(response);
+            if(response.statement != null){
+                drawchart1(response.statement);
+            }
+            if(response.cfi != null){
+                response.cfi[0].Mid = "Not Completed";
+                response.cfi[1].Mid = "Completed";
+                drawchart(response.cfi);
+            }
+      },
+      error: function ()
+      {
+         alert("Error loading data! Please try again.");
+      }
+    });
+
+    function drawchart(dataValues){
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Mid');
+        data.addColumn('number', 'Count');
+
+        for (var i = 0; i < dataValues.length; i++)
+        {
+            data.addRow([dataValues[i].Mid, dataValues[i].Count] );
+        }
+
+        var chart = new google.visualization.PieChart(document.getElementById('Sample_chart_div'));
+
+        var options = { legend: { position: "top" },
+                        fontsize: '16px',
+                        pieSliceText: 'percentage',
+                     };
+
+        chart.draw(data, options);
+    }
+
+    function drawchart1(dataValues){
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Mid');
+        data.addColumn('number', 'Count');
+
+        for (var i = 0; i < dataValues.length; i++)
+        {
+            data.addRow([dataValues[i].Mid, dataValues[i].Count] );
+        }
+
+        var chart = new google.visualization.PieChart(document.getElementById('Sample_chart_div1'));
+
+        var options = { legend: { position: "top" },
+                        fontsize: '16px',
+                        pieSliceText: 'percentage',
+                     };
+
+        chart.draw(data, options);
+    }
+
+</script>

@@ -1,0 +1,134 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+@Html.Partial("_SideMenu")
+<div class="m-grid__item m-grid__item--fluid m-wrapper">
+    <div class="m-subheader ">
+        <div class="d-flex align-items-center">
+            <div class="mr-auto">
+                <h3 class="m-subheader__title m-subheader__title--separator">
+                    Schedule
+                </h3>
+                <ul class="m-subheader__breadcrumbs m-nav m-nav--inline">
+                    <li class="m-nav__item m-nav__item--home">
+                        <a href="#" class="m-nav__link m-nav__link--icon">
+                            <i class="m-nav__link-icon la la-home"></i>
+                        </a>
+                    </li>
+                    <li class="m-nav__separator">
+                        -
+                    </li>
+                    <li class="m-nav__item">
+                        <a href="" class="m-nav__link">
+                            <span class="m-nav__link-text">
+                                Validate Schedule 
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div>
+
+            </div>
+        </div>
+    </div>
+    <div class="m-content">
+        <div class="row">
+            <div class="col-lg-6">
+                <!--begin::Portlet-->
+                <div class="m-portlet">
+                    <div class="m-portlet__head">
+                        <div class="m-portlet__head-caption">
+                            <div class="m-portlet__head-title">
+                                <span class="m-portlet__head-icon m--hide">
+                                    <i class="la la-gear"></i>
+                                </span>
+                                <h3 class="m-portlet__head-text">
+                                    Validate Schedule <small><a href="@Url.Action("ScheduleValidationSample", "Schedules")" style="text-decoration:underline;">(Download Sample Schedule)</a></small>
+                                </h3>
+                            </div>
+                        </div>
+                    </div>
+                    <form class="m-form" method="post" action="@Url.Action("Index", "Schedules")" enctype="multipart/form-data">
+                        <div class="m-portlet__body">
+                            <div id="schedule-ALert"></div>
+                            <hr/>
+                            <div id="status-ALert"></div>
+                            <div class="m-form__section m-form__section--first">
+                                <div class="form-group m-form__group row">
+                                    <label class="col-lg-2 col-form-label">Choose A File:</label>
+                                    <div class="col-lg-10">
+                                        <input type="file" class="form-control m-input" name="upload" placeholder="">
+                                        <span class="m-form__help">File type for upload must be in csv format</span>
+                                    </div>
+                                </div>
+                                <hr/>
+                                <div class="form-group m-form__group row">
+                                    <span style="color:red">
+                                        Kindly upload all validated schedule to <a href="@ViewBag.EPCOSS" target="_blank">EPCOSS</a>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="m-portlet__foot m-portlet__foot--fit">
+                            <div class="m-form__actions m-form__actions">
+                                <div class="row">
+                                    <div class="col-lg-2"></div>
+                                    <div class="col-lg-10">
+                                        <button type="submit" class="btn btn-success btnInport">Submit</button>
+                                        <button type="reset" class="btn btn-secondary">Cancel</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <!--end::Portlet-->
+            </div>
+        </div>
+        <div class="row">
+            @ViewBag.dat
+        </div>
+    </div>
+</div>
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/bootstrap")
+<script src="~/Scripts/jquery.cookie.js"></script>
+<script>
+    $(document).ready(function () {
+        $('.m-form').submit(function () {
+            $("#schedule-ALert").html("");
+            $("#status-ALert").html("");
+            blockUIForDownload();
+        });
+        $('.btnInport').click(function(){
+            sessionStorage.removeItem('StatusMsg');
+            $("#schedule-ALert").html("");
+            $("#status-ALert").html("");
+        });
+    });
+
+    var fileDownloadCheckTimer;
+    function blockUIForDownload() {
+        var token = new Date().getTime(); //use the current timestamp as the token value
+        $('#download_token_value_id').val(token);
+        //$.blockUI();
+        fileDownloadCheckTimer = window.setInterval(function () {
+            var cookieValue = $.cookie('fileDownloadToken');
+            if (cookieValue == "ScheduleRes")
+            $("#schedule-ALert").html('<alert class="alert alert-info">Schedule Validation successful, kindly check the file downloaded for errors</alert>');
+            $("#status-ALert").html('<alert class="alert alert-danger">Error Count : @Session["StatusMsg"]</alert>');
+            finishDownload();
+        }, 1000);
+    }
+
+    function finishDownload() {
+        window.clearInterval(fileDownloadCheckTimer);
+        $.removeCookie('fileDownloadToken'); //clears this cookie value
+        //$.unblockUI();
+    }
+</script>
+
+
